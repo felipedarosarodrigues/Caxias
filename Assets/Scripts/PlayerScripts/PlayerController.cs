@@ -203,6 +203,20 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void SetObjectForSlot(int objectIndex, int slot)
+    {
+        if (slot == 0)
+        {
+            spawnablePlatform1Index = objectIndex;
+            spawnablePlatformSlot1 = GameController.singleton.PlatformPrefabsForPlayers[objectIndex];
+        }
+        else
+        {
+            spawnablePlatform2Index = objectIndex;
+            spawnablePlatformSlot2 = GameController.singleton.PlatformPrefabsForPlayers[objectIndex];
+        }
+    }
+
     void PauseGame()
     {
         if (pauseAction.triggered)
