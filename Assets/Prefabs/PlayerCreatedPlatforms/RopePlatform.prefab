@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 7029576087114019089}
   - component: {fileID: 2333256221692779501}
   - component: {fileID: 1112877410891409226}
+  - component: {fileID: 8946574274657287370}
   m_Layer: 0
   m_Name: RopePlatform
   m_TagString: Untagged
@@ -368,3 +369,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetCenterOfMass
   rigidbody2D: {fileID: 2333256221692779501}
   newCenterOfMass: {x: 0, y: 0, z: 0}
+--- !u!114 &8946574274657287370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080937596641581998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbdc3fdb37bfee46bd46545e4ad9110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeSpriteBasedOnLayer
+  spriteRenderer: {fileID: 8432141756192080303}
+  spriteForPlayer2: {fileID: 593057402177748854, guid: ed9bea2743bd18b499633e30adf1c1bf, type: 3}

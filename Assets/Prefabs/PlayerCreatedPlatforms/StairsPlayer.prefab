@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4711745191843785248}
   - component: {fileID: 7029576087114019089}
   - component: {fileID: 2333256221692779501}
+  - component: {fileID: 3034927188706920205}
   m_Layer: 0
   m_Name: StairsPlayer
   m_TagString: Ladder
@@ -260,3 +261,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3034927188706920205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080937596641581998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbdc3fdb37bfee46bd46545e4ad9110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeSpriteBasedOnLayer
+  spriteRenderer: {fileID: 4742585705458331317}
+  spriteForPlayer2: {fileID: -7958314988637850867, guid: d58fc947c613092458a056470d246b21, type: 3}
