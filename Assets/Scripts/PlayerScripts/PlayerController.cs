@@ -155,6 +155,10 @@ public class PlayerController : MonoBehaviour
                 isOnLadder = true;
                 playerRigidbody.gravityScale = 0.0f;
             }
+            else if (hit.collider.gameObject.CompareTag("Trampoline"))
+            {
+                playerRigidbody.linearVelocityY = 8f;
+            }
         }
     }
 
@@ -203,6 +207,13 @@ public class PlayerController : MonoBehaviour
                 PlayerCursor.gameObject.SetActive(false);
             }
         }
+    }
+
+    void LeaveBuildMove()
+    {
+        current_control_state = PlayerControlState.MOVEMENT;
+                PlayerCursor.position = playerRigidbody.position;
+                PlayerCursor.gameObject.SetActive(false);
     }
 
     public void LeaveSelectingObjectState()
@@ -260,7 +271,9 @@ public class PlayerController : MonoBehaviour
                 {
                     newObject.layer = 11;
                 }
+                LeaveBuildMove();
             }
+            
         }
         
     }

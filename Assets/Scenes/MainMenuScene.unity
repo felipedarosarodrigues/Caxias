@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb00ca1a9c6063499f95e4febf36a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  StartGameSceneName: Level 1
+  StartGameSceneName: Fase1
 --- !u!1 &324436468
 GameObject:
   m_ObjectHideFlags: 0
