@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static List<PlayerController> currentPlayerControllers;
+    public static PlayerController[] currentPlayerControllers = {null,null,null,null};
     public float velocityMultiplier = 5.0f;
     public float cursorSpeed = 5.0f;
     public float cursorWobbliness = 1.0f;
     public int playerID = 0;
+    public int maxAmountOfSpawnedObjects=5;
     public Rigidbody2D playerRigidbody;
     public Transform PlayerCursor;
     public Transform PlayerCursorWobblySprite;
@@ -28,7 +29,10 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {   
-        if(currentPlayerControllers==null){
+        if(playerID==0)//only the player one really needs to call this
+            GameController.GuaranteeSceneHasGameController();
+        currentPlayerControllers[playerID] = this;
+        /*if(currentPlayerControllers==null){
             currentPlayerControllers = new List<PlayerController>();
         }
         else{
@@ -41,26 +45,26 @@ public class PlayerController : MonoBehaviour
                     currentPlayerControllers.RemoveAt(i);
                 }
             }
-        }
+        }*/
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentPlayerControllers.Add(this);
+        //currentPlayerControllers.Add(this);
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
         if(playerID==0){
             moveAction = InputSystem.actions.FindAction("Movement");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
-            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
+            interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
-            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
+            interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
         }
     }
 
@@ -141,7 +145,7 @@ public class PlayerController : MonoBehaviour
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
                 spawnedPlatformsList.Add(newObject);
-                if (spawnedPlatformsList.Count>=6)
+                if (spawnedPlatformsList.Count>maxAmountOfSpawnedObjects)
                 {
                     Destroy(spawnedPlatformsList[0]);
                     spawnedPlatformsList.RemoveAt(0);
