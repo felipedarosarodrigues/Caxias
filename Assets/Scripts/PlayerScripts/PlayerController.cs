@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {   
-        if(playerID==0)//only the player one really needs to call this
+        if(playerID==0){//only the player one really needs to call this
             GameController.GuaranteeSceneHasGameController();
+            
+        }
         currentPlayerControllers[playerID] = this;
         initialPosition = transform.position;
         /*if(currentPlayerControllers==null){
@@ -64,6 +66,17 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (playerID == 0)
+        {
+            GameObject spawnedHUDCanvas = Resources.Load("HUDCanvas") as GameObject;
+            GameObject newHUD= Instantiate(spawnedHUDCanvas);
+        }
+        if(current_control_state == PlayerControlState.CHOOSING_OBJECT){
+            GameObject chooseObjectCanvas = Resources.Load("ChooseObjectPlayerCanvas") as GameObject;
+            GameObject newChooseObjectCanvas= Instantiate(chooseObjectCanvas);
+            newChooseObjectCanvas.GetComponent<ChooseObjectPlayerCanvas>().playerIndex = playerID;
+        }
+
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
         if(playerID==0){
@@ -127,6 +140,8 @@ public class PlayerController : MonoBehaviour
 
     void PressedBuildModeAction()
     {
+        if(buildModeAction==null)
+            return;
         if(buildModeAction.triggered)
         {
             if(current_control_state == PlayerControlState.MOVEMENT){
@@ -219,6 +234,8 @@ public class PlayerController : MonoBehaviour
 
     void PauseGame()
     {
+        if(pauseAction==null)
+            return;
         if (pauseAction.triggered)
         {
             PauseCanvas.PauseActionPressed();

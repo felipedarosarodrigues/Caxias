@@ -682,6 +682,7 @@ MonoBehaviour:
   slot2Index: 0
   objectsSelectedInCanvas: 0
   ownerPicture: {fileID: 8714089280098755609}
+  catSprite: {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
   slot1Picture: {fileID: 7756418789960827751}
   slot2Picture: {fileID: 8846317707929107293}
   playerSprites:

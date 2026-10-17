@@ -11,6 +11,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     public int slot2Index = 0;
     public int objectsSelectedInCanvas=0;
     public Image ownerPicture;
+    public Sprite catSprite;
     public Image slot1Picture;
     public Image slot2Picture;
     public Sprite[] playerSprites;
@@ -40,6 +41,8 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
+            mainPanel.position = new Vector3(mainPanel.position.x+400,mainPanel.position.y,mainPanel.position.z);
+            ownerPicture.sprite = catSprite;
         }
         
 

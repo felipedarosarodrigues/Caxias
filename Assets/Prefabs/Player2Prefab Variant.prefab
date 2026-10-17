@@ -41,6 +41,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 506382110466553863, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
+      propertyPath: current_control_state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 506382110466553863, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: spawnablePlatformSlot2
       value: 
       objectReference: {fileID: 5080937596641581998, guid: 41a4bf94ce8404f4dbcc63888823ac32, type: 3}
