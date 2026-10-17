@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ChooseObjectPlayerCanvas : MonoBehaviour
 {
     public int playerIndex = 0;
+    public int objectsSelectedInCanvas=0;
     public Image ownerPicture;
     public Sprite[] playerSprites;
     public RectTransform mainPanel;

@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChooseObjectPlayerCanvas
   playerIndex: 1
+  objectsSelectedInCanvas: 0
   ownerPicture: {fileID: 8714089280098755609}
   playerSprites:
   - {fileID: 21300000, guid: d2875494de029024d97f5c2c2f06345a, type: 3}
@@ -540,7 +541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5220673091968130867
 RectTransform:
   m_ObjectHideFlags: 0

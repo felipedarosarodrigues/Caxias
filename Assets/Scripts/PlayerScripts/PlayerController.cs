@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
             PlayerCursor.gameObject.SetActive(true);
             PlayerCursor.position = PlayerCursor.position + new UnityEngine.Vector3(moveValue.x,moveValue.y,0) * Time.deltaTime * cursorSpeed;
-            PlayerCursorWobblySprite.localPosition = new UnityEngine.Vector3(0,MathF.Cos(Time.timeSinceLevelLoad)*cursorWobbliness ,0);
+            //PlayerCursorWobblySprite.localPosition = new UnityEngine.Vector3(0,MathF.Cos(Time.timeSinceLevelLoad)*cursorWobbliness ,0);
             
         }
     }

@@ -50,3 +50,8 @@ MonoBehaviour:
   - {fileID: 5080937596641581998, guid: 41a4bf94ce8404f4dbcc63888823ac32, type: 3}
   - {fileID: 5080937596641581998, guid: becf513cd0b56f2489207b458ad1522a, type: 3}
   - {fileID: 5080937596641581998, guid: 4785293096586ec4bbfa37df24121d66, type: 3}
+  PlatformSpritesForPlayers:
+  - {fileID: -4403543594003754843, guid: 9398b473d72e55a48901d70d71e347c0, type: 3}
+  - {fileID: -192890957702611549, guid: cbf38abb6fe6e4d4d8c86c3f11541a33, type: 3}
+  - {fileID: 532141743101547248, guid: 6ee73d7685aeb474592a7022ab09256f, type: 3}
+  - {fileID: -8729881625419622333, guid: 22d21da8d24474f41b439d797bca2b1b, type: 3}

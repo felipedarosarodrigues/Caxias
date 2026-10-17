@@ -38,6 +38,7 @@ public class ChoosePlayerObjectButton : MonoBehaviour
             int auxIndex = math.clamp(objectIndex,0,GameController.singleton.PlatformPrefabsForPlayers.Length-1);
             playerAffected.spawnablePlatformSlot1 = GameController.singleton.PlatformPrefabsForPlayers[auxIndex];
             playerAffected.LeaveSelectingObjectState();
+            PlayerHudPanel.updateHudForPlayer(playerIndex);
         }
         Destroy(parentCanvas.gameObject);
     }
