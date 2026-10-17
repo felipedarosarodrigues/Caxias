@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static List<PlayerController> currentPlayerControllers;
+    public static PlayerController[] currentPlayerControllers = {null,null,null,null};
     public float velocityMultiplier = 5.0f;
     public float cursorSpeed = 5.0f;
     public float cursorWobbliness = 1.0f;
@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentPlayerControllers.Add(this);
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
         if(playerID==0){
