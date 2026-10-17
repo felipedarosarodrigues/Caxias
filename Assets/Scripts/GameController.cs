@@ -4,6 +4,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController singleton;
     public int coinsAmount=0;
+    public GameObject[] PlatformPrefabsForPlayers;
     //this is the autoload that mostly holds a bunch of data
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

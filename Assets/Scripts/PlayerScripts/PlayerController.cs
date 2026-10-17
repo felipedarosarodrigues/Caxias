@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     public enum PlayerControlState {MOVEMENT, PLACING_OBJECT, NONE, CHOOSING_OBJECT};
     public PlayerControlState current_control_state = PlayerControlState.MOVEMENT;
     public GameObject spawnablePlatformSlot1;
+    public int spawnablePlatform1Index = 0;
     public GameObject spawnablePlatformSlot2;
+    public int spawnablePlatform2Index = 0;
     public List<GameObject> spawnedPlatformsList;
     public Color platformColor;
     UnityEngine.Vector3 initialPosition = UnityEngine.Vector3.zero;
@@ -70,7 +72,6 @@ public class PlayerController : MonoBehaviour
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
             pauseAction = InputSystem.actions.FindAction("Pause");
-            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
@@ -78,7 +79,6 @@ public class PlayerController : MonoBehaviour
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
             pauseAction = InputSystem.actions.FindAction("Pause");
-            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
         }
     }
 
@@ -175,9 +175,13 @@ public class PlayerController : MonoBehaviour
     void PlaceObject()
     {
         if (current_control_state == PlayerControlState.PLACING_OBJECT){
-            if (interactionAction.triggered)
+            if (interactionAction.triggered || interaction2Action.triggered)
             {
-                GameObject newObject = Instantiate(spawnablePlatformSlot1);
+                GameObject newObject;
+                if(interactionAction.triggered)
+                    newObject = Instantiate(spawnablePlatformSlot1);
+                else
+                    newObject = Instantiate(spawnablePlatformSlot2);
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
                 spawnedPlatformsList.Add(newObject);
@@ -196,6 +200,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        
     }
 
     void PauseGame()

@@ -44,3 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5ac62565794634a8e58cca2108e1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
+  coinsAmount: 0
+  PlatformPrefabsForPlayers:
+  - {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
+  - {fileID: 5080937596641581998, guid: 41a4bf94ce8404f4dbcc63888823ac32, type: 3}
+  - {fileID: 5080937596641581998, guid: becf513cd0b56f2489207b458ad1522a, type: 3}
+  - {fileID: 5080937596641581998, guid: 4785293096586ec4bbfa37df24121d66, type: 3}

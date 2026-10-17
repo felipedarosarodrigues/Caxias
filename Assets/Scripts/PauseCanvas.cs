@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseCanvas : MonoBehaviour
 {
     public static PauseCanvas singleton;
+    
     bool isLoadingScene = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +40,16 @@ public class PauseCanvas : MonoBehaviour
         }
     }
 
+    public void OnRestartLevelPressed()
+    {
+        if(!isLoadingScene){
+            Scene scene = SceneManager.GetActiveScene();
+            int currentSceneIndex = scene.buildIndex;
+            SceneManager.LoadSceneAsync(currentSceneIndex);
+            isLoadingScene = true;
+        }
+    }
+
     public static void PauseActionPressed()
     {
         if (singleton == null){
@@ -50,4 +61,10 @@ public class PauseCanvas : MonoBehaviour
             singleton.OnResumeGamePressed();
         }
     }
+
+    void OnDestroy()
+    {
+        Time.timeScale = 1f;
+    }
+
 }

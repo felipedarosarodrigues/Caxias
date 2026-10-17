@@ -27,6 +27,7 @@ public class WonLevelPanel : MonoBehaviour
             int nextSceneIndex = scene.buildIndex+1;
             SceneManager.LoadSceneAsync(nextSceneIndex);
             isLoadingScene = true;
+            Time.timeScale = 1f;
         }
     }
 
