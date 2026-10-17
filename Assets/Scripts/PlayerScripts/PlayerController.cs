@@ -52,11 +52,11 @@ public class PlayerController : MonoBehaviour
                     currentPlayerControllers.RemoveAt(i);
                 }
             }
-        }
+        }*/
 
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        */
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
