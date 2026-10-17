@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
     private SpriteRenderer spriteRenderer;
+    public bool isTouchingIce=false;
+    public bool isOnGround=false;
+    public bool isOnLadder=false;
+    public ContactFilter2D raycastContactFilter2D;
 
     void Awake()
     {   
@@ -119,12 +123,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        checkSurfaceType();
+    }
+
+    void checkSurfaceType()
+    {
+        Unity.Collections.NativeArray<RaycastHit2D> raycastResults = Physics2D.Raycast(playerRigidbody.position, -UnityEngine.Vector2.up,raycastContactFilter2D,0.6f);
+        if (raycastResults.Length <= 0)
+        {
+            isTouchingIce = false;
+            return;
+        }
+        foreach(RaycastHit2D hit in raycastResults)
+        {
+            isOnGround = true;
+            if (hit.collider.gameObject.CompareTag("Ice"))
+            {
+                isTouchingIce = true;
+                return;
+            }
+        }
+        isTouchingIce = false;
+    }
+
     void Movement()
     {
         if(current_control_state == PlayerControlState.MOVEMENT)
         {
             UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
-            playerRigidbody.linearVelocityX = moveValue.x*velocityMultiplier;
+            if(!isTouchingIce){
+                playerRigidbody.linearVelocityX = moveValue.x*velocityMultiplier;
+            }
+            else{
+                playerRigidbody.linearVelocityX = Mathf.Clamp(playerRigidbody.linearVelocityX + moveValue.x*10.0f*Time.deltaTime , -velocityMultiplier *1.5f, velocityMultiplier*1.5f);
+            }
             PlayerCursor.gameObject.SetActive(false);
             
         }
