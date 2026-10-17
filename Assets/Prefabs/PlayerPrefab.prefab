@@ -852,6 +852,26 @@ MonoBehaviour:
   PlayerCursorWobblySprite: {fileID: 1739614708206213684}
   current_control_state: 0
   spawnablePlatformSlot1: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
+  spawnablePlatform1Index: 0
   spawnablePlatformSlot2: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
+  spawnablePlatform2Index: 0
   spawnedPlatformsList: []
   platformColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
+  isTouchingIce: 0
+  isOnGround: 0
+  isOnLadder: 0
+  raycastContactFilter2D:
+    useTriggers: 1
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

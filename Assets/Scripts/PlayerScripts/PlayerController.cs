@@ -131,9 +131,15 @@ public class PlayerController : MonoBehaviour
     void checkSurfaceType()
     {
         Unity.Collections.NativeArray<RaycastHit2D> raycastResults = Physics2D.Raycast(playerRigidbody.position, -UnityEngine.Vector2.up,raycastContactFilter2D,0.6f);
+        isOnLadder = false;
+        isTouchingIce = false;
+        isOnGround = false;
+        playerRigidbody.gravityScale = 1.0f;
         if (raycastResults.Length <= 0)
         {
+            isOnLadder = false;
             isTouchingIce = false;
+            isOnGround = false;
             return;
         }
         foreach(RaycastHit2D hit in raycastResults)
@@ -142,10 +148,14 @@ public class PlayerController : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Ice"))
             {
                 isTouchingIce = true;
-                return;
+                
+            }
+            else if (hit.collider.gameObject.CompareTag("Ladder"))
+            {
+                isOnLadder = true;
+                playerRigidbody.gravityScale = 0.0f;
             }
         }
-        isTouchingIce = false;
     }
 
     void Movement()
@@ -160,6 +170,10 @@ public class PlayerController : MonoBehaviour
                 playerRigidbody.linearVelocityX = Mathf.Clamp(playerRigidbody.linearVelocityX + moveValue.x*10.0f*Time.deltaTime , -velocityMultiplier *1.5f, velocityMultiplier*1.5f);
             }
             PlayerCursor.gameObject.SetActive(false);
+            if (isOnLadder)
+            {
+                playerRigidbody.linearVelocityY = moveValue.y*velocityMultiplier;
+            }
             
         }
         else if (current_control_state == PlayerControlState.PLACING_OBJECT)
@@ -201,16 +215,15 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         if(current_control_state == PlayerControlState.MOVEMENT){
-            if ( Mathf.Abs(playerRigidbody.linearVelocityY) >=0.01f)
+            if ( Mathf.Abs(playerRigidbody.linearVelocityY) <=0.01f || isOnGround)
             {
-                return;
+                UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
+                if(moveValue.y > 0.1f && moveValue.y > lastYValue)
+                {
+                    playerRigidbody.linearVelocityY = 6.0f;
+                }
+                lastYValue = moveValue.y;
             }
-            UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
-            if(moveValue.y > 0.1f && moveValue.y > lastYValue)
-            {
-                playerRigidbody.linearVelocityY = 6.0f;
-            }
-            lastYValue = moveValue.y;
         }
     }
 

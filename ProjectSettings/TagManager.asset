@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ice
   - RopePlatform
+  - Ladder
   layers:
   - Default
   - TransparentFX
