@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
  using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public enum PlayerControlState {MOVEMENT, PLACING_OBJECT, NONE};
     public PlayerControlState current_control_state = PlayerControlState.MOVEMENT;
     public GameObject basicPlatformPrefab;
+    public List<GameObject> spawnedPlatformsList;
     public Color platformColor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -106,6 +108,12 @@ public class PlayerController : MonoBehaviour
                 GameObject newObject = Instantiate(basicPlatformPrefab);
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
+                spawnedPlatformsList.Add(newObject);
+                if (spawnedPlatformsList.Count>=6)
+                {
+                    Destroy(spawnedPlatformsList[0]);
+                    spawnedPlatformsList.RemoveAt(0);
+                }
                 if (playerID == 0)
                 {
                     newObject.layer = 10;
