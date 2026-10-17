@@ -7,12 +7,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController[] currentPlayerControllers = {null,null,null,null};
+    public static List<PlayerController> currentPlayerControllers;
     public float velocityMultiplier = 5.0f;
     public float cursorSpeed = 5.0f;
     public float cursorWobbliness = 1.0f;
     public int playerID = 0;
-    public int maxAmountOfSpawnedObjects=5;
     public Rigidbody2D playerRigidbody;
     public Transform PlayerCursor;
     public Transform PlayerCursorWobblySprite;
@@ -30,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public Color platformColor;
     UnityEngine.Vector3 initialPosition = UnityEngine.Vector3.zero;
 
+    public Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     void Awake()
     {   
         if(playerID==0)//only the player one really needs to call this
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
         currentPlayerControllers[playerID] = this;
         initialPosition = transform.position;
         /*if(currentPlayerControllers==null){
+        if(currentPlayerControllers==null){
             currentPlayerControllers = new List<PlayerController>();
         }
         else{
@@ -49,13 +52,17 @@ public class PlayerController : MonoBehaviour
                     currentPlayerControllers.RemoveAt(i);
                 }
             }
-        }*/
+        }
+
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        */
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //currentPlayerControllers.Add(this);
+        currentPlayerControllers.Add(this);
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
         if(playerID==0){
@@ -64,6 +71,7 @@ public class PlayerController : MonoBehaviour
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
             pauseAction = InputSystem.actions.FindAction("Pause");
+            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
@@ -71,6 +79,7 @@ public class PlayerController : MonoBehaviour
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
             pauseAction = InputSystem.actions.FindAction("Pause");
+            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
         }
     }
 
@@ -86,6 +95,15 @@ public class PlayerController : MonoBehaviour
             Die();
         }
         PauseGame();
+        animator.SetBool("Moving", Mathf.Abs(playerRigidbody.linearVelocityX) != 0f);
+        if (playerRigidbody.linearVelocityX > 0f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (playerRigidbody.linearVelocityX < 0f)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     void Movement()
@@ -163,7 +181,7 @@ public class PlayerController : MonoBehaviour
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
                 spawnedPlatformsList.Add(newObject);
-                if (spawnedPlatformsList.Count>maxAmountOfSpawnedObjects)
+                if (spawnedPlatformsList.Count>=6)
                 {
                     Destroy(spawnedPlatformsList[0]);
                     spawnedPlatformsList.RemoveAt(0);
