@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static List<PlayerController> currentPlayerControllers;
     public float velocityMultiplier = 5.0f;
     public float cursorSpeed = 5.0f;
     public float cursorWobbliness = 1.0f;
@@ -16,26 +17,50 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     InputAction buildModeAction;
     InputAction interactionAction;
+    InputAction interaction2Action;
     float lastYValue = 0.0f;
-    public enum PlayerControlState {MOVEMENT, PLACING_OBJECT, NONE};
+    public enum PlayerControlState {MOVEMENT, PLACING_OBJECT, NONE, CHOOSING_OBJECT};
     public PlayerControlState current_control_state = PlayerControlState.MOVEMENT;
-    public GameObject basicPlatformPrefab;
+    public GameObject spawnablePlatformSlot1;
+    public GameObject spawnablePlatformSlot2;
     public List<GameObject> spawnedPlatformsList;
     public Color platformColor;
+
+    void Awake()
+    {   
+        if(currentPlayerControllers==null){
+            currentPlayerControllers = new List<PlayerController>();
+        }
+        else{
+            //here we remove any index in the playerController list that is empty
+            for(int i=currentPlayerControllers.Count-1; i>= 0;i--)
+            {
+                print("Checking if there is a player at list Index "+i);
+                if (currentPlayerControllers[i] == null)
+                {
+                    currentPlayerControllers.RemoveAt(i);
+                }
+            }
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentPlayerControllers.Add(this);
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
         if(playerID==0){
             moveAction = InputSystem.actions.FindAction("Movement");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
+            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
+            interactionAction = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
         }
     }
 
@@ -84,6 +109,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void LeaveSelectingObjectState()
+    {
+        current_control_state = PlayerControlState.MOVEMENT;
+        PlayerCursor.position = playerRigidbody.position;
+        PlayerCursor.gameObject.SetActive(false);
+    } 
+
     void Jump()
     {
         if(current_control_state == PlayerControlState.MOVEMENT){
@@ -105,7 +137,7 @@ public class PlayerController : MonoBehaviour
         if (current_control_state == PlayerControlState.PLACING_OBJECT){
             if (interactionAction.triggered)
             {
-                GameObject newObject = Instantiate(basicPlatformPrefab);
+                GameObject newObject = Instantiate(spawnablePlatformSlot1);
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
                 spawnedPlatformsList.Add(newObject);

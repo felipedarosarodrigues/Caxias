@@ -851,6 +851,7 @@ MonoBehaviour:
   PlayerCursor: {fileID: 758097149177561010}
   PlayerCursorWobblySprite: {fileID: 1739614708206213684}
   current_control_state: 0
-  basicPlatformPrefab: {fileID: 5080937596641581998, guid: 21865c4b53930014b8cd7d0d4c9f288f, type: 3}
+  spawnablePlatformSlot1: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
+  spawnablePlatformSlot2: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
   spawnedPlatformsList: []
   platformColor: {r: 0, g: 0, b: 0, a: 0}
