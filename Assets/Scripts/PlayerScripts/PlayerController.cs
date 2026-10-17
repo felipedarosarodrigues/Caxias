@@ -94,7 +94,8 @@ public class PlayerController : MonoBehaviour
             Die();
         }
         PauseGame();
-        animator.SetBool("Moving", Mathf.Abs(playerRigidbody.linearVelocityX) != 0f);
+        if(animator!=null)
+            animator.SetBool("Moving", Mathf.Abs(playerRigidbody.linearVelocityX) != 0f);
         if (playerRigidbody.linearVelocityX > 0f)
         {
             spriteRenderer.flipX = false;
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
     void PressedBuildModeAction()
     {
-        pauseAction = InputSystem.actions.FindAction("Pause");
+        if(buildModeAction.triggered)
         {
             if(current_control_state == PlayerControlState.MOVEMENT){
                 current_control_state = PlayerControlState.PLACING_OBJECT;
