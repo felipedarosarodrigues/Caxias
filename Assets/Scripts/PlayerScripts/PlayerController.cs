@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        Jump();
+        //Jump();
         PressedBuildModeAction();
         PlaceObject();
     }
