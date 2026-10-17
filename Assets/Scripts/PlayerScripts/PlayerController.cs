@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> spawnedPlatformsList;
     public Color platformColor;
 
+    public Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     void Awake()
     {   
         if(currentPlayerControllers==null){
@@ -42,6 +45,9 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -71,6 +77,15 @@ public class PlayerController : MonoBehaviour
         //Jump();
         PressedBuildModeAction();
         PlaceObject();
+        animator.SetBool("Moving", Mathf.Abs(playerRigidbody.linearVelocityX) != 0f);
+        if (playerRigidbody.linearVelocityX > 0f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (playerRigidbody.linearVelocityX < 0f)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     void Movement()
