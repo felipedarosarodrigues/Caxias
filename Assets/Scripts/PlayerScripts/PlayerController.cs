@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
  using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     InputAction buildModeAction;
     InputAction interactionAction;
     InputAction interaction2Action;
+    InputAction pauseAction;
     float lastYValue = 0.0f;
     public enum PlayerControlState {MOVEMENT, PLACING_OBJECT, NONE, CHOOSING_OBJECT};
     public PlayerControlState current_control_state = PlayerControlState.MOVEMENT;
@@ -26,12 +28,14 @@ public class PlayerController : MonoBehaviour
     public GameObject spawnablePlatformSlot2;
     public List<GameObject> spawnedPlatformsList;
     public Color platformColor;
+    UnityEngine.Vector3 initialPosition = UnityEngine.Vector3.zero;
 
     void Awake()
     {   
         if(playerID==0)//only the player one really needs to call this
             GameController.GuaranteeSceneHasGameController();
         currentPlayerControllers[playerID] = this;
+        initialPosition = transform.position;
         /*if(currentPlayerControllers==null){
             currentPlayerControllers = new List<PlayerController>();
         }
@@ -59,12 +63,14 @@ public class PlayerController : MonoBehaviour
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
+            pauseAction = InputSystem.actions.FindAction("Pause");
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
+            pauseAction = InputSystem.actions.FindAction("Pause");
         }
     }
 
@@ -75,30 +81,35 @@ public class PlayerController : MonoBehaviour
         //Jump();
         PressedBuildModeAction();
         PlaceObject();
+        if (playerRigidbody.position.y <= -10f)
+        {
+            Die();
+        }
+        PauseGame();
     }
 
     void Movement()
     {
         if(current_control_state == PlayerControlState.MOVEMENT)
         {
-            Vector2 moveValue = moveAction.ReadValue<Vector2>();
+            UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
             playerRigidbody.linearVelocityX = moveValue.x*velocityMultiplier;
             PlayerCursor.gameObject.SetActive(false);
             
         }
         else if (current_control_state == PlayerControlState.PLACING_OBJECT)
         {
-            Vector2 moveValue = moveAction.ReadValue<Vector2>();
+            UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
             PlayerCursor.gameObject.SetActive(true);
-            PlayerCursor.position = PlayerCursor.position + new Vector3(moveValue.x,moveValue.y,0) * Time.deltaTime * cursorSpeed;
-            PlayerCursorWobblySprite.localPosition = new Vector3(0,MathF.Cos(Time.timeSinceLevelLoad)*cursorWobbliness ,0);
+            PlayerCursor.position = PlayerCursor.position + new UnityEngine.Vector3(moveValue.x,moveValue.y,0) * Time.deltaTime * cursorSpeed;
+            PlayerCursorWobblySprite.localPosition = new UnityEngine.Vector3(0,MathF.Cos(Time.timeSinceLevelLoad)*cursorWobbliness ,0);
             
         }
     }
 
     void PressedBuildModeAction()
     {
-        if (buildModeAction.triggered)
+        pauseAction = InputSystem.actions.FindAction("Pause");
         {
             if(current_control_state == PlayerControlState.MOVEMENT){
                 current_control_state = PlayerControlState.PLACING_OBJECT;
@@ -127,7 +138,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
-            Vector2 moveValue = moveAction.ReadValue<Vector2>();
+            UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
             if(moveValue.y > 0.1f && moveValue.y > lastYValue)
             {
                 playerRigidbody.linearVelocityY = 6.0f;
@@ -136,6 +147,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Die()
+    {
+        transform.position = initialPosition;
+        playerRigidbody.position = initialPosition;
+        playerRigidbody.linearVelocity = UnityEngine.Vector2.zero;
+        print("Calling Die function for player "+playerID);
+    }
     void PlaceObject()
     {
         if (current_control_state == PlayerControlState.PLACING_OBJECT){
@@ -159,6 +177,14 @@ public class PlayerController : MonoBehaviour
                     newObject.layer = 11;
                 }
             }
+        }
+    }
+
+    void PauseGame()
+    {
+        if (pauseAction.triggered)
+        {
+            PauseCanvas.PauseActionPressed();
         }
     }
 
