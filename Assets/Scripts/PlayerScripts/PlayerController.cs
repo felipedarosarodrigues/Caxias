@@ -39,10 +39,19 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private SpriteRenderer spriteRenderer;
     public bool isTouchingIce=false;
+    public bool isTouchingTrampoline=false;
+    public bool isTouchingRope=false;
+    public bool wasTouchingTrampoline=false;
     float IcyTime=0.0f;
     public bool isOnGround=false;
     public bool isOnLadder=false;
     public ContactFilter2D raycastContactFilter2D;
+
+    public AudioSource icyAudioSource;
+    public AudioSource ladderAudioSource;
+    public AudioSource trampolineAudioSource;
+    public AudioSource ropeAudioSource;
+    public AudioSource playerAudioSource;
 
     void Awake()
     {   
@@ -154,7 +163,12 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             return;
         }
+
          isTouchingIce = false;
+         isTouchingTrampoline = false;
+         isTouchingRope = false;
+         isOnLadder = false;
+
         foreach(RaycastHit2D hit in raycastResults)
         {
             isOnGround = true;
@@ -171,12 +185,18 @@ public class PlayerController : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("Trampoline"))
             {
                 playerRigidbody.linearVelocityY = 8f;
+                isTouchingTrampoline = true;
             }
             else if (hit.collider.gameObject.CompareTag("RopePlatform"))
             {
                 //hit.collider.GetComponent<Rigidbody2D>().AddTorque(moveValue.x*5.0f*Time.deltaTime) ;
+                isTouchingRope = true;
             }
-        }
+    
+
+    }
+    
+
     }
 
     void Movement()
