@@ -679,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChooseObjectPlayerCanvas
   playerIndex: 0
   slot1Index: 0
-  slot2Index: 0
+  slot2Index: 1
   objectsSelectedInCanvas: 0
   ownerPicture: {fileID: 8714089280098755609}
   catSprite: {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
