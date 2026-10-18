@@ -221,6 +221,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 8752025762707965121, guid: 88de2e227eca4464fa74058dc55ebbce, type: 3}
+      propertyPath: 'coinsCollectedByLevel.Array.data[3]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752025762707965121, guid: 88de2e227eca4464fa74058dc55ebbce, type: 3}
+      propertyPath: 'coinsCollectedByLevel.Array.data[5]'
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
