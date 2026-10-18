@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinArea : MonoBehaviour
 {
     public GameObject wonLevelPanel;
+    public GameObject TutorialLevelPanel;
     public bool hasPlayer1 = false;
     public bool hasPlayer2 = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +29,13 @@ public class WinArea : MonoBehaviour
             hasPlayer2 = true; 
         }
         if(hasPlayer1 && hasPlayer2){
-            Instantiate(wonLevelPanel);
+            if (SceneManager.GetActiveScene().buildIndex <= 5)
+            {
+                Instantiate(wonLevelPanel);
+            } else if (SceneManager.GetActiveScene().buildIndex >= 6)
+            {
+                Instantiate(TutorialLevelPanel);
+            }
         }
     }
 

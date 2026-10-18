@@ -290,5 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinArea
   wonLevelPanel: {fileID: 4711455954440581931, guid: 58f83beb8d0e34e46abfbc727a932f97, type: 3}
+  TutorialLevelPanel: {fileID: 5265095736508385096, guid: 71a93c43dcac1f44c8b35c1db52867b7, type: 3}
   hasPlayer1: 0
   hasPlayer2: 0

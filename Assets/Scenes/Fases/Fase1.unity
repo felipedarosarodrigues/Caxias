@@ -3095,6 +3095,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1590770834795621080, guid: 8e2004440296e2b45a21db890914ee89, type: 3}
+      propertyPath: TutorialLevelPanel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4293482887940952888, guid: 8e2004440296e2b45a21db890914ee89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.88
