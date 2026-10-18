@@ -34,6 +34,16 @@ public class WonLevelPanel : MonoBehaviour
         }
     }
 
+    public void OnMenuLevelButtonPressed()
+    {
+        gameObject.SetActive(false);
+        if(!isLoadingScene){
+            SceneManager.LoadSceneAsync(0);
+            isLoadingScene = true;
+            Time.timeScale = 1f;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
