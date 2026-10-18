@@ -299,7 +299,7 @@
                 {
                     "name": "",
                     "id": "165bf14a-43f0-48cf-aa34-6d9072d9a264",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/space",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -343,7 +343,7 @@
                 {
                     "name": "",
                     "id": "286bf272-ba3e-4d0e-a327-5b68290b2d08",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -365,7 +365,7 @@
                 {
                     "name": "",
                     "id": "493e15e9-0f04-41fc-9d43-7f2ac8b26194",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

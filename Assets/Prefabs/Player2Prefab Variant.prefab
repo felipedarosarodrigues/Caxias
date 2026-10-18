@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1812742189
       objectReference: {fileID: 0}
+    - target: {fileID: 1606434677180409454, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 48623710e89f7184bb1f8daa05fd0246, type: 3}
     - target: {fileID: 1686060502671768713, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.07
@@ -272,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7232295113856091752, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8410845b6d47bf3419234cec16016cf3, type: 3}
     - target: {fileID: 8365382885783405006, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Name
       value: Player2Prefab Variant
