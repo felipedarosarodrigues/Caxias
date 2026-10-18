@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 8946574274657287370}
   m_Layer: 0
   m_Name: RopePlatform
-  m_TagString: Untagged
+  m_TagString: RopePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,7 +343,7 @@ Rigidbody2D:
   m_Mass: 50
   m_LinearDamping: 0.2
   m_AngularDamping: 0.55
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: b8cb141abc1df2844ae3d892c9765d03, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -381,5 +381,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbdc3fdb37bfee46bd46545e4ad9110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSpriteBasedOnLayer
-  spriteRenderer: {fileID: 8432141756192080303}
+  spriteRenderer: {fileID: 7321627070619935529}
   spriteForPlayer2: {fileID: 593057402177748854, guid: ed9bea2743bd18b499633e30adf1c1bf, type: 3}

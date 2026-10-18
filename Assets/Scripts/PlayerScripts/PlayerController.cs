@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController[] currentPlayerControllers = {null,null,null,null};
     public float velocityMultiplier = 5.0f;
+    UnityEngine.Vector2 moveValue;
     public float cursorSpeed = 5.0f;
     public float cursorWobbliness = 1.0f;
     public int playerID = 0;
@@ -25,8 +26,10 @@ public class PlayerController : MonoBehaviour
     public PlayerControlState current_control_state = PlayerControlState.MOVEMENT;
     public GameObject spawnablePlatformSlot1;
     public int spawnablePlatform1Index = 0;
+    GameObject currentSpawnedPlatformSlot1;
     public GameObject spawnablePlatformSlot2;
     public int spawnablePlatform2Index = 0;
+    GameObject currentSpawnedPlatformSlot2;
     public List<GameObject> spawnedPlatformsList;
     public Color platformColor;
     UnityEngine.Vector3 initialPosition = UnityEngine.Vector3.zero;
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private SpriteRenderer spriteRenderer;
     public bool isTouchingIce=false;
+    float IcyTime=0.0f;
     public bool isOnGround=false;
     public bool isOnLadder=false;
     public ContactFilter2D raycastContactFilter2D;
@@ -132,23 +136,23 @@ public class PlayerController : MonoBehaviour
     {
         Unity.Collections.NativeArray<RaycastHit2D> raycastResults = Physics2D.Raycast(playerRigidbody.position, -UnityEngine.Vector2.up,raycastContactFilter2D,0.6f);
         isOnLadder = false;
-        isTouchingIce = false;
+       
         isOnGround = false;
         playerRigidbody.gravityScale = 1.0f;
         if (raycastResults.Length <= 0)
         {
             isOnLadder = false;
-            isTouchingIce = false;
             isOnGround = false;
             return;
         }
+         isTouchingIce = false;
         foreach(RaycastHit2D hit in raycastResults)
         {
             isOnGround = true;
             if (hit.collider.gameObject.CompareTag("Ice"))
             {
                 isTouchingIce = true;
-                
+                IcyTime = 0.5f;
             }
             else if (hit.collider.gameObject.CompareTag("Ladder"))
             {
@@ -159,6 +163,10 @@ public class PlayerController : MonoBehaviour
             {
                 playerRigidbody.linearVelocityY = 8f;
             }
+            else if (hit.collider.gameObject.CompareTag("RopePlatform"))
+            {
+                //hit.collider.GetComponent<Rigidbody2D>().AddTorque(moveValue.x*5.0f*Time.deltaTime) ;
+            }
         }
     }
 
@@ -166,8 +174,8 @@ public class PlayerController : MonoBehaviour
     {
         if(current_control_state == PlayerControlState.MOVEMENT)
         {
-            UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
-            if(!isTouchingIce){
+            moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
+            if(!isTouchingIce && IcyTime <=0.001f){
                 playerRigidbody.linearVelocityX = moveValue.x*velocityMultiplier;
             }
             else{
@@ -188,6 +196,7 @@ public class PlayerController : MonoBehaviour
             //PlayerCursorWobblySprite.localPosition = new UnityEngine.Vector3(0,MathF.Cos(Time.timeSinceLevelLoad)*cursorWobbliness ,0);
             
         }
+        IcyTime -=Time.deltaTime;
     }
 
     void PressedBuildModeAction()
@@ -257,12 +266,23 @@ public class PlayerController : MonoBehaviour
                     newObject = Instantiate(spawnablePlatformSlot2);
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
-                spawnedPlatformsList.Add(newObject);
+                if(interactionAction.triggered){
+                    if(currentSpawnedPlatformSlot1!=null)
+                        Destroy(currentSpawnedPlatformSlot1.gameObject);
+                    currentSpawnedPlatformSlot1 = newObject;
+                }
+                else
+                {
+                    if(currentSpawnedPlatformSlot2!=null)
+                        Destroy(currentSpawnedPlatformSlot2.gameObject);
+                    currentSpawnedPlatformSlot2 = newObject;
+                }
+                /*spawnedPlatformsList.Add(newObject);
                 if (spawnedPlatformsList.Count>=6)
                 {
                     Destroy(spawnedPlatformsList[0]);
                     spawnedPlatformsList.RemoveAt(0);
-                }
+                }*/
                 if (playerID == 0)
                 {
                     newObject.layer = 10;

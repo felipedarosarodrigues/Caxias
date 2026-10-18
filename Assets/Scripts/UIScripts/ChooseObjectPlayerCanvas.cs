@@ -23,6 +23,8 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     float timeSinceLastChange=0.2f;
     InputAction moveAction;
     InputAction buildModeAction;
+    InputAction placeObjectAction;
+    InputAction placeObjectAction2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,10 +39,14 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         if(playerIndex==0){
             moveAction = InputSystem.actions.FindAction("Movement");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
+            placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
+            placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
+            placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
+            placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
             mainPanel.position = new Vector3(mainPanel.position.x+400,mainPanel.position.y,mainPanel.position.z);
             ownerPicture.sprite = catSprite;
         }
@@ -77,7 +83,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             changeObjectForSlot(1,-1);
         }
 
-        if (buildModeAction.triggered)
+        if (buildModeAction.triggered || placeObjectAction.triggered)
         {
             ConfirmAndClose();
         }

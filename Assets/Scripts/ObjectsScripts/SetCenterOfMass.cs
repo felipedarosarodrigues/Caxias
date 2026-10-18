@@ -16,7 +16,7 @@ public class SetCenterOfMass : MonoBehaviour
     {
         if( MathF.Abs(transform.rotation.z)>0.01f)
         {
-            rigidbody2D.AddTorque(transform.rotation.z);
+            rigidbody2D.AddTorque(transform.rotation.z*Time.deltaTime*30f);
         }
     }
 }
