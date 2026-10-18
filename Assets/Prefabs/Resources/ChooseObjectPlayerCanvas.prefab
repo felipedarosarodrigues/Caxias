@@ -507,6 +507,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
   - {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
   - {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
+  backgroundImage: {fileID: 3757301845167606517}
   mainPanel: {fileID: 6859412651172400580}
   objectButtonsContainer: {fileID: 8279101199253018436}
   objectButtonsList: []
@@ -1055,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9022003120670072758
 RectTransform:
   m_ObjectHideFlags: 0

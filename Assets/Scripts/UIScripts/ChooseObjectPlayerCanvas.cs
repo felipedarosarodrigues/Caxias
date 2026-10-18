@@ -28,6 +28,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     public Sprite confirmRed;
     public Sprite confirmBlue;
     public Sprite[] playerSprites;
+    public GameObject backgroundImage;
     public RectTransform mainPanel;
     public RectTransform objectButtonsContainer;
     public  List<ChoosePlayerObjectButton> objectButtonsList;
@@ -70,12 +71,14 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
-            mainPanel.position = new Vector3(mainPanel.position.x+600,mainPanel.position.y,mainPanel.position.z);
+            mainPanel.position = new Vector3(mainPanel.position.x+600,mainPanel.position.y,mainPanel.position.z+100);
             ownerPicture.sprite = catSprite;
             background.sprite = blueBackground;
             commandUpDownImage.sprite = commandUpDownBlue;
             commandLeftRightImage.sprite = commandLeftRightBlue;
             confirm.sprite = confirmBlue;
+            backgroundImage.SetActive(true);
+
         }
         if(playerIndex==0){
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot1Index];
