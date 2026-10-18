@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        //Jump();
+        Jump();
         PressedBuildModeAction();
         PlaceObject();
         if (playerRigidbody.position.y <= -10f)
@@ -317,13 +317,13 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if(current_control_state == PlayerControlState.MOVEMENT){
-            if ( Mathf.Abs(playerRigidbody.linearVelocityY) <=0.01f || isOnGround)
+        if(current_control_state == PlayerControlState.MOVEMENT && !isOnLadder){
+            if ( Mathf.Abs(playerRigidbody.linearVelocityY) <=0.01f && isOnGround)
             {
                 UnityEngine.Vector2 moveValue = moveAction.ReadValue<UnityEngine.Vector2>();
-                if(moveValue.y > 0.1f && moveValue.y > lastYValue)
+                if(moveValue.y > 0.25f && moveValue.y > lastYValue)
                 {
-                    playerRigidbody.linearVelocityY = 6.0f;
+                    playerRigidbody.linearVelocityY = 2.0f;
                 }
                 lastYValue = moveValue.y;
             }
