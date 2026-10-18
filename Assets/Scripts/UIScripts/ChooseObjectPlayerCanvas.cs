@@ -50,6 +50,14 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             mainPanel.position = new Vector3(mainPanel.position.x+400,mainPanel.position.y,mainPanel.position.z);
             ownerPicture.sprite = catSprite;
         }
+        if(playerIndex==0){
+                slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot1Index];
+                slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot2Index];
+        }
+        else{
+                slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot1Index];
+                slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot2Index];
+        }
         
 
     }
@@ -127,13 +135,19 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         }
         PlayerController playerAffected = PlayerController.currentPlayerControllers[playerIndex];
         if(slot==0){
-            slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[auxNumber];
+            if(playerIndex==0)
+                slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[auxNumber];
+            else
+                slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[auxNumber];
             slot1Index = auxNumber;
             playerAffected.spawnablePlatform1Index = slot1Index;
             
         }
         else{
-            slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[auxNumber];
+            if(playerIndex==0)
+                slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[auxNumber];
+            else
+                slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[auxNumber];
             slot2Index = auxNumber;
             playerAffected.spawnablePlatform2Index = auxNumber;
         }

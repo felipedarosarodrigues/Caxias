@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public int coinsAmount=0;
     public GameObject[] PlatformPrefabsForPlayers;
     public Sprite[] PlatformSpritesForPlayers;
+    public Sprite[] PlatformSpritesForPlayer2;
     public bool[] unlockedLevels = new bool[9];
     public int[] coinsCollectedByLevel = new int[9];
     //this is the autoload that mostly holds a bunch of data
