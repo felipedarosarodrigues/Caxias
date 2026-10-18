@@ -27,8 +27,15 @@ public class PlayerHudPanel : MonoBehaviour
     {
         if (PlayerController.currentPlayerControllers[playerID] != null){
             PlayerController player = PlayerController.currentPlayerControllers[playerID];
-            Slot1Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform1Index];
-            Slot2Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform2Index];
+            if(player.playerID==0){
+                Slot1Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform1Index];
+                Slot2Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform2Index];
+            }
+            else
+            {
+                Slot1Image.sprite = GameController.singleton.PlatformSpritesForPlayer2[player.spawnablePlatform1Index];
+                Slot2Image.sprite = GameController.singleton.PlatformSpritesForPlayer2[player.spawnablePlatform2Index];
+            }
         }
     }
 
@@ -36,8 +43,15 @@ public class PlayerHudPanel : MonoBehaviour
     {
         if (PlayerController.currentPlayerControllers[index] != null && playerHudPanelsList[index]!=null){
             PlayerController player = PlayerController.currentPlayerControllers[index];
-            playerHudPanelsList[index].Slot1Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform1Index];
-            playerHudPanelsList[index].Slot2Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform2Index];
+            if(player.playerID==0){
+                playerHudPanelsList[index].Slot1Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform1Index];
+                playerHudPanelsList[index].Slot2Image.sprite = GameController.singleton.PlatformSpritesForPlayers[player.spawnablePlatform2Index];
+            }
+            else
+            {
+                playerHudPanelsList[index].Slot1Image.sprite = GameController.singleton.PlatformSpritesForPlayer2[player.spawnablePlatform1Index];
+                playerHudPanelsList[index].Slot2Image.sprite = GameController.singleton.PlatformSpritesForPlayer2[player.spawnablePlatform2Index];
+            }
         }
     }
 
