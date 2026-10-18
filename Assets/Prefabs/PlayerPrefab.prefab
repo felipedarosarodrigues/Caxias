@@ -854,8 +854,8 @@ MonoBehaviour:
   current_control_state: 0
   spawnablePlatformSlot1: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
   spawnablePlatform1Index: 0
-  spawnablePlatformSlot2: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
-  spawnablePlatform2Index: 0
+  spawnablePlatformSlot2: {fileID: 5080937596641581998, guid: 41a4bf94ce8404f4dbcc63888823ac32, type: 3}
+  spawnablePlatform2Index: 1
   spawnedPlatformsList: []
   platformColor: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 0}
