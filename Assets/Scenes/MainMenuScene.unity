@@ -1612,6 +1612,26 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[1]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[4]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[5]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2358,6 +2378,26 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[1]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[4]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[5]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2949,6 +2989,26 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[1]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[4]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[5]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3236,6 +3296,26 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[1]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[4]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[5]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3628,6 +3708,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectButton (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[1]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[4]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
+    - target: {fileID: 8191039710997088992, guid: 2d0d4638d3e86dd46bebb9142eb376dc, type: 3}
+      propertyPath: 'starsSpritesByAmount.Array.data[5]'
+      value: 
+      objectReference: {fileID: -6722227018980562929, guid: 39e890030fcdf32468f8c230874d036b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
