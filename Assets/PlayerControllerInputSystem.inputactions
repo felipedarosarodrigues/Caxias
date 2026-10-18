@@ -112,7 +112,7 @@
                 {
                     "name": "Up",
                     "id": "ce66c618-742b-4fef-8c78-489acc6e52e0",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -134,7 +134,7 @@
                 {
                     "name": "Down",
                     "id": "a994b89b-7e70-43b8-a5bf-243743eedc53",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -156,7 +156,7 @@
                 {
                     "name": "Left",
                     "id": "0d97d909-e51a-4116-9222-562e8ea1b8f8",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -178,7 +178,7 @@
                 {
                     "name": "Right",
                     "id": "9d364a48-a504-43a2-b300-48896d3e9a25",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -211,7 +211,7 @@
                 {
                     "name": "Up",
                     "id": "9f0d943f-52b3-4bc6-a673-479432850aa9",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -233,7 +233,7 @@
                 {
                     "name": "Down",
                     "id": "92d70393-7814-4310-bfa8-6d409689aacc",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -255,7 +255,7 @@
                 {
                     "name": "Left",
                     "id": "1384d8da-7f8a-4d85-87a6-abee5a36917f",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -277,7 +277,7 @@
                 {
                     "name": "Right",
                     "id": "83eb2ea7-0dc4-48bc-8593-c73e86200a42",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -299,7 +299,7 @@
                 {
                     "name": "",
                     "id": "165bf14a-43f0-48cf-aa34-6d9072d9a264",
-                    "path": "<Keyboard>/numpadEnter",
+                    "path": "<Keyboard>/q",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -321,7 +321,7 @@
                 {
                     "name": "",
                     "id": "11d37b36-c4c0-4938-a4b9-0a00e12e0eea",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/enter",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -343,7 +343,7 @@
                 {
                     "name": "",
                     "id": "286bf272-ba3e-4d0e-a327-5b68290b2d08",
-                    "path": "<Keyboard>/end",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -409,7 +409,7 @@
                 {
                     "name": "",
                     "id": "9f83dd34-3c78-48d4-9aaf-0f083a9dbb2d",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
