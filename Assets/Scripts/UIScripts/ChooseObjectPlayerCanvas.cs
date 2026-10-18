@@ -91,11 +91,11 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
 
         }
         if(playerIndex==0){
-                panel.SetActive(false);
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot1Index];
                 slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot2Index];
         }
         else{
+                panel.SetActive(false);
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot1Index];
                 slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot2Index];
         }

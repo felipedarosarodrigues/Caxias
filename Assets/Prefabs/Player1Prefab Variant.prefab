@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3031361042178036346, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_DefaultActionMap
-      value: 95c979cf-e48d-4f40-989d-6f04c8141b84
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 3065021730860193968, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Layer
@@ -302,15 +302,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073322698838321638, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 1.0062765
       objectReference: {fileID: 0}
     - target: {fileID: 7073322698838321638, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Size.y
-      value: 1.6889191
+      value: 1.6034371
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073322698838321638, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05876845
       objectReference: {fileID: 0}
     - target: {fileID: 7073322698838321638, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Offset.y
-      value: -0.13916767
+      value: -0.18190867
       objectReference: {fileID: 0}
     - target: {fileID: 7161749741174082502, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Layer

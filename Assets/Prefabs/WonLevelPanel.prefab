@@ -463,6 +463,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WonLevelPanel
   initialFocusObject: {fileID: 2292472427829989432}
+  star1: {fileID: 3405247999145909934, guid: aef6d2cf99db786408b7621a01d64149, type: 3}
+  star2: {fileID: -4432988016129149307, guid: e2f0eb779b3346e4c8dba4a9263388bd, type: 3}
+  star3: {fileID: -8748472958043960987, guid: f2880740e1063964c8ae5d5508c5632c, type: 3}
+  star4: {fileID: 1127786797943224198, guid: 0539531679076d146b036fcd71cf08ff, type: 3}
+  star5: {fileID: 7053126877335207018, guid: d647d4fa21af39c4fb8d16410b24a8fe, type: 3}
+  star: {fileID: 1925520787998598911}
 --- !u!1 &6050108294872233991
 GameObject:
   m_ObjectHideFlags: 0

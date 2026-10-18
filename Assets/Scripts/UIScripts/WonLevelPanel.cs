@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WonLevelPanel : MonoBehaviour
 {
     bool isLoadingScene = false;
     public static WonLevelPanel singleton;
     public GameObject initialFocusObject;
+    public Sprite star1, star2, star3, star4, star5;
+    public Image star;
     Scene scene;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +24,27 @@ public class WonLevelPanel : MonoBehaviour
             scene = SceneManager.GetActiveScene();
             if(initialFocusObject!=null)
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(initialFocusObject);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            star.sprite = star1;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            star.sprite = star2;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            star.sprite = star3;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            star.sprite = star4;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            star.sprite = star5;
         }
     }
 
