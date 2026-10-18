@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6020910861597820288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -489,9 +489,9 @@ RectTransform:
   - {fileID: 1932109447177707445}
   m_Father: {fileID: 4319158278876627881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 655, y: -102.384}
   m_SizeDelta: {x: 256, y: 95.728}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6609773410596510233
@@ -837,10 +837,10 @@ RectTransform:
   - {fileID: 2152163318705123787}
   m_Father: {fileID: 4319158278876627881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 256, y: 95.728}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 5, y: -109.04}
+  m_SizeDelta: {x: 0, y: 109.04}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7006224767183520745
 CanvasRenderer:
@@ -931,10 +931,10 @@ RectTransform:
   - {fileID: 8472693661608454719}
   m_Father: {fileID: 4319158278876627881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 256, y: 95.728}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 923, y: -109.04}
+  m_SizeDelta: {x: 0, y: 109.04}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &952804415620164968
 CanvasRenderer:
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8389161888044359397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
@@ -1387,7 +1387,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 5
   m_ChildAlignment: 3
-  m_Spacing: 5
+  m_Spacing: 500
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
