@@ -1,22 +1,25 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class textHover : MonoBehaviour
-
+public class textHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private TextMeshPro texto;
+    private TextMeshProUGUI texto;
 
     public Color preto = Color.black;
     public Color branco = Color.white;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        texto = GetComponent<TextMeshPro>();
+        texto = GetComponent<TextMeshProUGUI>();
+
         if (texto != null)
         {
             texto.color = branco;
+        }
+        else
+        {
+            Debug.LogWarning("TextMeshProUGUI não encontrado!", this);
         }
     }
 
@@ -35,5 +38,4 @@ public class textHover : MonoBehaviour
             texto.color = branco;
         }
     }
-
 }
