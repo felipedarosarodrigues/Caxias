@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
  using UnityEngine.InputSystem;
@@ -42,7 +43,13 @@ public class PlayerController : MonoBehaviour
     float IcyTime=0.0f;
     public bool isOnGround=false;
     public bool isOnLadder=false;
+    public bool isOnRopePlatform=false;
     public ContactFilter2D raycastContactFilter2D;
+    [Header("AudioParameters")]
+    public AudioSource iceAudioSource;
+    public AudioSource ropeAudioSource;
+    public AudioSource ladderAudioSource;
+    public AudioSource trampolineAudioSource;
 
     void Awake()
     {   
@@ -147,6 +154,7 @@ public class PlayerController : MonoBehaviour
         isOnLadder = false;
        
         isOnGround = false;
+        isOnRopePlatform = false;
         playerRigidbody.gravityScale = 1.0f;
         if (raycastResults.Length <= 0)
         {
@@ -162,6 +170,14 @@ public class PlayerController : MonoBehaviour
             {
                 isTouchingIce = true;
                 IcyTime = 0.5f;
+                if( iceAudioSource.volume >=0.01f){
+                    iceAudioSource.volume = Math.Clamp(playerRigidbody.linearVelocityX,0.0f,1.0f) ;
+                }
+                else
+                {
+                    iceAudioSource.Play();
+                    iceAudioSource.volume = Math.Clamp(playerRigidbody.linearVelocityX,0.0f,1.0f) ;
+                }
             }
             else if (hit.collider.gameObject.CompareTag("Ladder"))
             {
@@ -171,11 +187,25 @@ public class PlayerController : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("Trampoline"))
             {
                 playerRigidbody.linearVelocityY = 8f;
+                if(!trampolineAudioSource.isPlaying){
+                    trampolineAudioSource.pitch = UnityEngine.Random.Range(0.9f,1.1f);
+                    trampolineAudioSource.Play();
+                }
             }
             else if (hit.collider.gameObject.CompareTag("RopePlatform"))
             {
+                isOnRopePlatform = true;
+                ropeAudioSource.volume = 1.0f;
                 //hit.collider.GetComponent<Rigidbody2D>().AddTorque(moveValue.x*5.0f*Time.deltaTime) ;
             }
+        }
+        if (!isOnRopePlatform)
+        {
+            ropeAudioSource.volume = Mathf.MoveTowards(ropeAudioSource.volume,0.0f,Time.deltaTime*2.0f);
+        }
+        if (!isTouchingIce)
+        {
+            iceAudioSource.volume =  Mathf.MoveTowards(iceAudioSource.volume,0.0f,Time.deltaTime* 1.0f) ;
         }
     }
 
@@ -194,6 +224,7 @@ public class PlayerController : MonoBehaviour
             if (isOnLadder)
             {
                 playerRigidbody.linearVelocityY = moveValue.y*velocityMultiplier;
+                ladderAudioSource.volume = Mathf.MoveTowards(ladderAudioSource.volume, Math.Clamp(moveValue.magnitude*3.0f,0.0f,1.0f), Time.deltaTime *5.0f);
             }
             
         }
@@ -204,6 +235,10 @@ public class PlayerController : MonoBehaviour
             PlayerCursor.position = PlayerCursor.position + new UnityEngine.Vector3(moveValue.x,moveValue.y,0) * Time.deltaTime * cursorSpeed;
             //PlayerCursorWobblySprite.localPosition = new UnityEngine.Vector3(0,MathF.Cos(Time.timeSinceLevelLoad)*cursorWobbliness ,0);
             
+        }
+        if (!isOnLadder)
+        {
+            ladderAudioSource.volume = 0.0f;
         }
         IcyTime -=Time.deltaTime;
     }
