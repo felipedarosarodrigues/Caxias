@@ -23,6 +23,9 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     public Image commandLeftRightImage;
     public Sprite commandLeftRightRed;
     public Sprite commandLeftRightBlue;
+    public Image confirm;
+    public Sprite confirmRed;
+    public Sprite confirmBlue;
     public Sprite[] playerSprites;
     public RectTransform mainPanel;
     public RectTransform objectButtonsContainer;
@@ -53,6 +56,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             background.sprite = redBackground;
             commandUpDownImage.sprite = commandUpDownRed;
             commandLeftRightImage.sprite = commandLeftRightRed;
+            confirm.sprite = confirmRed;
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
@@ -64,6 +68,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             background.sprite = blueBackground;
             commandUpDownImage.sprite = commandUpDownBlue;
             commandLeftRightImage.sprite = commandLeftRightBlue;
+            confirm.sprite = confirmBlue;
         }
         if(playerIndex==0){
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot1Index];
