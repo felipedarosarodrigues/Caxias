@@ -514,6 +514,8 @@ MonoBehaviour:
   introText: {fileID: 4172797756260238728}
   introDuration: 5
   countdownAudio: {fileID: 7809563969883698052}
+  panel: {fileID: 3757301845167606517}
+  hudCanvas: {fileID: 3875861930143328063, guid: b22ef500ac960d347a4785d7ba90241f, type: 3}
 --- !u!82 &7809563969883698052
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1056,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9022003120670072758
 RectTransform:
   m_ObjectHideFlags: 0
