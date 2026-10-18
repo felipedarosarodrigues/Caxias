@@ -53,13 +53,16 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             background.sprite = redBackground;
             commandUpDownImage.sprite = commandUpDownRed;
             commandLeftRightImage.sprite = commandLeftRightRed;
+            mainPanel.SetAnchors( new Vector2(0.75f,0.5f) );
+            //mainPanel.position = new Vector3(0,0,0);
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
-            mainPanel.position = new Vector3(mainPanel.position.x+600,mainPanel.position.y,mainPanel.position.z);
+            mainPanel.SetAnchors( new Vector2(0.25f,0.5f) );
+            //mainPanel.position = new Vector3(0,0,0);
             ownerPicture.sprite = catSprite;
             background.sprite = blueBackground;
             commandUpDownImage.sprite = commandUpDownBlue;
