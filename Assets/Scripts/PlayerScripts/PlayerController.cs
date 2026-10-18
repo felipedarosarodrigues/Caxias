@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource ropeAudioSource;
     public AudioSource ladderAudioSource;
     public AudioSource trampolineAudioSource;
+    public AudioSource enterPlatformModeAudioSource;
+    public AudioSource placePlatformAudioSource;
 
     void Awake()
     {   
@@ -258,6 +260,7 @@ public class PlayerController : MonoBehaviour
                 else
                     whichPlatformSlotWillBePlaced = 1;
                 current_control_state = PlayerControlState.PLACING_OBJECT;
+                enterPlatformModeAudioSource.Play();
                 PlayerCursor.position = playerRigidbody.position;
                 PlayerCursor.gameObject.SetActive(true);
                 if(whichPlatformSlotWillBePlaced==0){
@@ -372,6 +375,7 @@ public class PlayerController : MonoBehaviour
                 {
                     newObject.layer = 11;
                 }
+                placePlatformAudioSource.Play();
                 LeaveBuildMove();
             }
             
