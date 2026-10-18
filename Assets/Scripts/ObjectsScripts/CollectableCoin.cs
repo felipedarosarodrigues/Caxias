@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CollectableCoin : MonoBehaviour
 {
+    bool collected = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,10 +17,13 @@ public class CollectableCoin : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if(collected)//don't do anything if it has already been collected
+            return;
         PlayerController collidedPlayer = col.GetComponentInParent<PlayerController>();
         if (collidedPlayer != null)
         {
-            GameController.singleton.coinsAmount+=1;
+            collected = true;
+            GameController.addCoin();
             Destroy(gameObject);
         }
     
