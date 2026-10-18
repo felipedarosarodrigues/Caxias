@@ -77,7 +77,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             //buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             //placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             //placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
-            mainPanel.SetAnchors( new Vector2(0.25f,0.5f) );
+            mainPanel.SetAnchors( new Vector2(0.75f,0.5f) );
             //mainPanel.position = new Vector3(0,0,0);
             ownerPicture.sprite = catSprite;
             background.sprite = blueBackground;
