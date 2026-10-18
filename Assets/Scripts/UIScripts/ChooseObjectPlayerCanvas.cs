@@ -14,6 +14,15 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     public Sprite catSprite;
     public Image slot1Picture;
     public Image slot2Picture;
+    public Image background;
+    public Sprite redBackground;
+    public Sprite blueBackground;
+    public Image commandUpDownImage;
+    public Sprite commandUpDownRed;
+    public Sprite commandUpDownBlue;
+    public Image commandLeftRightImage;
+    public Sprite commandLeftRightRed;
+    public Sprite commandLeftRightBlue;
     public Sprite[] playerSprites;
     public RectTransform mainPanel;
     public RectTransform objectButtonsContainer;
@@ -41,14 +50,20 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
             placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
             placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
+            background.sprite = redBackground;
+            commandUpDownImage.sprite = commandUpDownRed;
+            commandLeftRightImage.sprite = commandLeftRightRed;
         }
         else{
             moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
-            mainPanel.position = new Vector3(mainPanel.position.x+400,mainPanel.position.y,mainPanel.position.z);
+            mainPanel.position = new Vector3(mainPanel.position.x+600,mainPanel.position.y,mainPanel.position.z);
             ownerPicture.sprite = catSprite;
+            background.sprite = blueBackground;
+            commandUpDownImage.sprite = commandUpDownBlue;
+            commandLeftRightImage.sprite = commandLeftRightBlue;
         }
         if(playerIndex==0){
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot1Index];

@@ -411,6 +411,15 @@ MonoBehaviour:
   catSprite: {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
   slot1Picture: {fileID: 7756418789960827751}
   slot2Picture: {fileID: 8846317707929107293}
+  background: {fileID: 2257495147216177251}
+  redBackground: {fileID: 857498857170383758, guid: ae4fe46a3aa543f4e8fb83e7701e024e, type: 3}
+  blueBackground: {fileID: -5582834806754852159, guid: 29bfc724fd25fe541a9d87826c805547, type: 3}
+  commandUpDownImage: {fileID: 6084075113559204612}
+  commandUpDownRed: {fileID: 6401762330218236072, guid: 7c6814b9897c3c94bb45b8f0dc11e4f9, type: 3}
+  commandUpDownBlue: {fileID: 5826919645248244173, guid: 32820b513d18bb74d97a69bd6520a819, type: 3}
+  commandLeftRightImage: {fileID: 4560500087551890906}
+  commandLeftRightRed: {fileID: -1975301227898433073, guid: 0158f3bb05a21664486716d17dd1d51f, type: 3}
+  commandLeftRightBlue: {fileID: -739553856011122623, guid: cab7d2721eceb9748947fcc47bcd860e, type: 3}
   playerSprites:
   - {fileID: 21300000, guid: d2875494de029024d97f5c2c2f06345a, type: 3}
   - {fileID: 21300000, guid: 8fa91d272611549459e300fd8f3a060a, type: 3}
@@ -590,7 +599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -13}
   m_SizeDelta: {x: -5, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6867671639214689480
