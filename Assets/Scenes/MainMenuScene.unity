@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
   StartGameSceneName: Fase1
-  Tutorial: TutorialCorda
+  Tutorial: TutorialPulo
   mainPanels:
   - {fileID: 972703462}
   - {fileID: 524404612}

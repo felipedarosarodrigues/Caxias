@@ -32,7 +32,7 @@ public class WinArea : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex <= 5)
             {
                 Instantiate(wonLevelPanel);
-            } else if (SceneManager.GetActiveScene().buildIndex >= 6)
+            } else if (SceneManager.GetActiveScene().buildIndex >= 7)
             {
                 Instantiate(TutorialLevelPanel);
             }
