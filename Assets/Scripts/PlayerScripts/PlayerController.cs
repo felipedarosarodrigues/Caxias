@@ -162,7 +162,10 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             return;
         }
+
          isTouchingIce = false;
+         isOnLadder = false;
+
         foreach(RaycastHit2D hit in raycastResults)
         {
             isOnGround = true;
