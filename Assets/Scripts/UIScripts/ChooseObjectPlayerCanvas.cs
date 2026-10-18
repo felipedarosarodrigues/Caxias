@@ -105,11 +105,25 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         auxNumber= auxNumber+ changeAmount;
         if (auxNumber >= GameController.singleton.PlatformSpritesForPlayers.Length)
         {
-            auxNumber=GameController.singleton.PlatformSpritesForPlayers.Length-1;
+            auxNumber = 0;
         }
         else if (auxNumber<0)
         {
-            auxNumber = 0;
+            
+            auxNumber=GameController.singleton.PlatformSpritesForPlayers.Length-1;
+        }
+        //here we prevent if from repeating
+        if( (slot==0 && auxNumber == slot2Index) || (slot!=0 && auxNumber == slot1Index))
+        {
+            auxNumber= auxNumber+ changeAmount;
+            if (auxNumber >= GameController.singleton.PlatformSpritesForPlayers.Length)
+            {
+                auxNumber = 0;
+            }
+            else if (auxNumber<0)
+            {
+                auxNumber=GameController.singleton.PlatformSpritesForPlayers.Length-1;
+            }
         }
         PlayerController playerAffected = PlayerController.currentPlayerControllers[playerIndex];
         if(slot==0){
