@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public int playerID = 0;
     public Rigidbody2D playerRigidbody;
     public Transform PlayerCursor;
+    public SpriteRenderer PlayerCursorSpritePreview;
     public Transform PlayerCursorWobblySprite;
     InputAction moveAction;
     InputAction buildModeAction;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public int spawnablePlatform2Index = 0;
     GameObject currentSpawnedPlatformSlot2;
     public List<GameObject> spawnedPlatformsList;
+    int whichPlatformSlotWillBePlaced = 0;
     public Color platformColor;
     UnityEngine.Vector3 initialPosition = UnityEngine.Vector3.zero;
 
@@ -209,6 +211,12 @@ public class PlayerController : MonoBehaviour
                 current_control_state = PlayerControlState.PLACING_OBJECT;
                 PlayerCursor.position = playerRigidbody.position;
                 PlayerCursor.gameObject.SetActive(true);
+                if(whichPlatformSlotWillBePlaced==0){
+                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                }
+                else{
+                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                }
             }
             else if (current_control_state == PlayerControlState.PLACING_OBJECT){
                 current_control_state = PlayerControlState.MOVEMENT;
@@ -257,16 +265,28 @@ public class PlayerController : MonoBehaviour
     void PlaceObject()
     {
         if (current_control_state == PlayerControlState.PLACING_OBJECT){
-            if (interactionAction.triggered || interaction2Action.triggered)
+            if (interaction2Action.triggered)
+            {
+                whichPlatformSlotWillBePlaced +=1;
+                if(whichPlatformSlotWillBePlaced>=2){
+                    whichPlatformSlotWillBePlaced = 0;
+                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                }
+                else{
+                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                }
+            }
+
+            if (interactionAction.triggered)
             {
                 GameObject newObject;
-                if(interactionAction.triggered)
+                if(whichPlatformSlotWillBePlaced==0)
                     newObject = Instantiate(spawnablePlatformSlot1);
                 else
                     newObject = Instantiate(spawnablePlatformSlot2);
                 newObject.transform.position = PlayerCursorWobblySprite.position;
                 newObject.GetComponent<SpriteRenderer>().color = platformColor;
-                if(interactionAction.triggered){
+                if(whichPlatformSlotWillBePlaced==0){
                     if(currentSpawnedPlatformSlot1!=null)
                         Destroy(currentSpawnedPlatformSlot1.gameObject);
                     currentSpawnedPlatformSlot1 = newObject;

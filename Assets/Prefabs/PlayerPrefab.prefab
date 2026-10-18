@@ -849,6 +849,7 @@ MonoBehaviour:
   playerID: 0
   playerRigidbody: {fileID: 5136822985773054667}
   PlayerCursor: {fileID: 758097149177561010}
+  PlayerCursorSpritePreview: {fileID: 1388746908008300209}
   PlayerCursorWobblySprite: {fileID: 1739614708206213684}
   current_control_state: 0
   spawnablePlatformSlot1: {fileID: 5080937596641581998, guid: 07fbac9380ae34d4e86cf5ebd6c1d65c, type: 3}
