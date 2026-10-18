@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEditor;
 
-public class textHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class textHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     private TextMeshProUGUI texto;
 
@@ -11,9 +13,9 @@ public class textHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void Start()
     {
-        texto = GetComponent<TextMeshProUGUI>();
+        texto = GetComponentInChildren<TextMeshProUGUI>();
 
-        if (texto != null)
+        if (texto != null && EventSystem.current.currentSelectedGameObject != gameObject)
         {
             texto.color = branco;
         }
@@ -23,7 +25,7 @@ public class textHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnSelect(BaseEventData eventData)
     {
         if (texto != null)
         {
@@ -31,9 +33,25 @@ public class textHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnDeselect(BaseEventData eventData)
     {
         if (texto != null)
+        {
+            texto.color = branco;
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (texto != null && EventSystem.current.currentSelectedGameObject != gameObject)
+        {
+            texto.color = preto;
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (texto != null && EventSystem.current.currentSelectedGameObject != gameObject)
         {
             texto.color = branco;
         }
