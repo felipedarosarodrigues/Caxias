@@ -223,22 +223,34 @@ public class PlayerController : MonoBehaviour
                 PlayerCursor.position = playerRigidbody.position;
                 PlayerCursor.gameObject.SetActive(true);
                 if(whichPlatformSlotWillBePlaced==0){
-                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                    if(playerID==0)
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                    else
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayer2[spawnablePlatform1Index];
                 }
                 else{
-                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                    if(playerID==0)
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                    else
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayer2[spawnablePlatform2Index];
                 }
             }
             else if (current_control_state == PlayerControlState.PLACING_OBJECT){
                 if (interactionAction.triggered)
                 {
                     whichPlatformSlotWillBePlaced =0;
-                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                    if(playerID==0)
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                    else
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayer2[spawnablePlatform1Index];
                 }
                 else
                 {
                     whichPlatformSlotWillBePlaced =1;
-                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                    if(playerID==0)
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                    else
+                        PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayer2[spawnablePlatform2Index];
                 }
 
                 /*current_control_state = PlayerControlState.MOVEMENT;
