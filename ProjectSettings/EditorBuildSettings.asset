@@ -27,16 +27,16 @@ EditorBuildSettings:
     path: Assets/Scenes/CreditsScene.unity
     guid: 6041919904806d94f8e3791e2dc5a63a
   - enabled: 1
-    path: Assets/Scenes/TutorialScenes/TutorialCorda.unity
-    guid: c9d7c0012eb5ae54296a1d4cf548b1a3
+    path: Assets/Scenes/TutorialScenes/TutorialPulo.unity
+    guid: b7b6da6aa1ac8a64b8e608ddf15ac31d
   - enabled: 1
     path: Assets/Scenes/TutorialScenes/TutorialDeslize.unity
-    guid: 3851279469897464184c13b0f3d5d0d5
+    guid: ddaac0218ef665f47a75fbd12d41c356
   - enabled: 1
-    path: Assets/Scenes/TutorialScenes/TutorialParede.unity
-    guid: cb725158c60dba541900ad641b98c51c
+    path: Assets/Scenes/TutorialScenes/TutorialEscada.unity
+    guid: 84fd2ff2eb2d161408e958854edd3e5b
   - enabled: 1
-    path: Assets/Scenes/TutorialScenes/TutorialPulo.unity
-    guid: 1d4f5513d55925d4b92cfa8ea1fc4492
+    path: Assets/Scenes/TutorialScenes/TutorialCorda.unity
+    guid: c9d7c0012eb5ae54296a1d4cf548b1a3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3965d214b71e4874487ae27ecbd3371e, type: 3}

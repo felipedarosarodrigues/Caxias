@@ -29,6 +29,9 @@ public class WonLevelPanel : MonoBehaviour
             isLoadingScene = true;
             Time.timeScale = 1f;
         }
+        if(scene.buildIndex >= 10){
+            SceneManager.LoadSceneAsync(0);
+        }
     }
 
     // Update is called once per frame
