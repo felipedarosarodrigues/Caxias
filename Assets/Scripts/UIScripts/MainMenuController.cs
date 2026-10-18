@@ -5,6 +5,7 @@ public class MainMenuController : MonoBehaviour
 {
     bool isLoadingScene = false;
     [SerializeField] string StartGameSceneName = "Level 1";
+    [SerializeField] string Tutorial = "Tutorial 1";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,14 @@ public class MainMenuController : MonoBehaviour
     {
         if(!isLoadingScene){
             SceneManager.LoadSceneAsync(StartGameSceneName);
+            isLoadingScene = true;
+        }
+    }
+
+    public void OnTutorialButtonPressed()
+    {
+        if(!isLoadingScene){
+            SceneManager.LoadSceneAsync(Tutorial);
             isLoadingScene = true;
         }
     }
