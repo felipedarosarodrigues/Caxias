@@ -144,6 +144,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3031361042178036346, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 95c979cf-e48d-4f40-989d-6f04c8141b84
+      objectReference: {fileID: 0}
     - target: {fileID: 3065021730860193968, guid: 60b96ce7b12b575489fe5677581b07d0, type: 3}
       propertyPath: m_Layer
       value: 6

@@ -56,18 +56,23 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         }
         ownerPicture.sprite = playerSprites[playerIndex];
         */
-        moveAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Movement"];
-        buildModeAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["BuildMode"];
-        placeObjectAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["InteractionButton1"];
-        placeObjectAction2 = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["InteractionButton2"];
+        
         if(playerIndex==0){
             
             background.sprite = redBackground;
             commandUpDownImage.sprite = commandUpDownRed;
             commandLeftRightImage.sprite = commandLeftRightRed;
             confirm.sprite = confirmRed;
+            moveAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player1/Movement"];
+            buildModeAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player1/BuildMode"];
+            placeObjectAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player1/InteractionButton1"];
+            placeObjectAction2 = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player1/InteractionButton2"];
         }
         else{
+            moveAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/Movement"];
+            buildModeAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/BuildMode"];
+            placeObjectAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/InteractionButton1"];
+            placeObjectAction2 = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/InteractionButton2"];
             //moveAction = InputSystem.actions.FindAction("MovementPlayer2");
             //buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             //placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");

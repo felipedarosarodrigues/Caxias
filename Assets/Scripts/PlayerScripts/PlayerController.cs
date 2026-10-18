@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
         }
         currentPlayerControllers[playerID] = this;
         initialPosition = transform.position;
+        /*if (Gamepad.all.Count<=0)
+        {
+            playerInput.SwitchCurrentControlScheme("Arrows");
+        }*/
         /*if(currentPlayerControllers==null){
         if(currentPlayerControllers==null){
             currentPlayerControllers = new List<PlayerController>();
@@ -101,20 +105,20 @@ public class PlayerController : MonoBehaviour
 
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
-        //if(playerID==0){
-            moveAction = playerInput.actions["Movement"];
-            buildModeAction = playerInput.actions["BuildMode"];
-            interactionAction = playerInput.actions["InteractionButton1"];
-            interaction2Action = playerInput.actions["InteractionButton2"];
-            pauseAction = playerInput.actions["Pause"];
-        /*}
+        if(playerID==0){
+            moveAction = playerInput.actions["Player1/Movement"];
+            buildModeAction = playerInput.actions["Player1/BuildMode"];
+            interactionAction = playerInput.actions["Player1/InteractionButton1"];
+            interaction2Action = playerInput.actions["Player1/InteractionButton2"];
+            pauseAction = playerInput.actions["Player1/Pause"];
+        }
         else{
-            moveAction = InputSystem.actions.FindAction("Movement");
-            buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
-            interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
-            interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
-            pauseAction = InputSystem.actions.FindAction("Pause");
-        }*/
+            moveAction = playerInput.actions["Player2/Movement"];
+            buildModeAction = playerInput.actions["Player2/BuildMode"];
+            interactionAction = playerInput.actions["Player2/InteractionButton1"];
+            interaction2Action = playerInput.actions["Player2/InteractionButton2"];
+            pauseAction = playerInput.actions["Player2/Pause"];
+        }
     }
 
     // Update is called once per frame
