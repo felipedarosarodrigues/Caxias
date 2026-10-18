@@ -212,9 +212,13 @@ public class PlayerController : MonoBehaviour
     {
         if(buildModeAction==null)
             return;
-        if(buildModeAction.triggered)
+        if(interactionAction.triggered || interaction2Action.triggered)
         {
             if(current_control_state == PlayerControlState.MOVEMENT){
+                if(interactionAction.triggered)
+                    whichPlatformSlotWillBePlaced = 0;
+                else
+                    whichPlatformSlotWillBePlaced = 1;
                 current_control_state = PlayerControlState.PLACING_OBJECT;
                 PlayerCursor.position = playerRigidbody.position;
                 PlayerCursor.gameObject.SetActive(true);
@@ -226,9 +230,20 @@ public class PlayerController : MonoBehaviour
                 }
             }
             else if (current_control_state == PlayerControlState.PLACING_OBJECT){
-                current_control_state = PlayerControlState.MOVEMENT;
+                if (interactionAction.triggered)
+                {
+                    whichPlatformSlotWillBePlaced =0;
+                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
+                }
+                else
+                {
+                    whichPlatformSlotWillBePlaced =1;
+                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
+                }
+
+                /*current_control_state = PlayerControlState.MOVEMENT;
                 PlayerCursor.position = playerRigidbody.position;
-                PlayerCursor.gameObject.SetActive(false);
+                PlayerCursor.gameObject.SetActive(false);*/
             }
         }
     }
@@ -272,19 +287,8 @@ public class PlayerController : MonoBehaviour
     void PlaceObject()
     {
         if (current_control_state == PlayerControlState.PLACING_OBJECT){
-            if (interaction2Action.triggered)
-            {
-                whichPlatformSlotWillBePlaced +=1;
-                if(whichPlatformSlotWillBePlaced>=2){
-                    whichPlatformSlotWillBePlaced = 0;
-                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform1Index];
-                }
-                else{
-                    PlayerCursorSpritePreview.sprite = GameController.singleton.PlatformSpritesForPlayers[spawnablePlatform2Index];
-                }
-            }
-
-            if (interactionAction.triggered)
+            
+            if (buildModeAction.triggered)
             {
                 GameObject newObject;
                 if(whichPlatformSlotWillBePlaced==0)
