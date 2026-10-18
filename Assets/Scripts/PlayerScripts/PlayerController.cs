@@ -5,10 +5,12 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
  using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController[] currentPlayerControllers = {null,null,null,null};
+    public PlayerInput playerInput;
     public float velocityMultiplier = 5.0f;
     UnityEngine.Vector2 moveValue;
     public float cursorSpeed = 5.0f;
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
             GameObject spawnedHUDCanvas = Resources.Load("HUDCanvas") as GameObject;
             GameObject newHUD= Instantiate(spawnedHUDCanvas);
         }
+        
         if(current_control_state == PlayerControlState.CHOOSING_OBJECT){
             GameObject chooseObjectCanvas = Resources.Load("ChooseObjectPlayerCanvas") as GameObject;
             GameObject newChooseObjectCanvas= Instantiate(chooseObjectCanvas);
@@ -98,20 +101,20 @@ public class PlayerController : MonoBehaviour
 
         //playerRigidbody = GetComponentInChildren<Rigidbody2D>();
         //nao é pra ser bonito, é pra funcionar rapido
-        if(playerID==0){
-            moveAction = InputSystem.actions.FindAction("Movement");
-            buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
-            interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
-            interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
-            pauseAction = InputSystem.actions.FindAction("Pause");
-        }
+        //if(playerID==0){
+            moveAction = playerInput.actions["Movement"];
+            buildModeAction = playerInput.actions["BuildMode"];
+            interactionAction = playerInput.actions["InteractionButton1"];
+            interaction2Action = playerInput.actions["InteractionButton2"];
+            pauseAction = playerInput.actions["Pause"];
+        /*}
         else{
-            moveAction = InputSystem.actions.FindAction("MovementPlayer2");
+            moveAction = InputSystem.actions.FindAction("Movement");
             buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
             interactionAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
             interaction2Action = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
             pauseAction = InputSystem.actions.FindAction("Pause");
-        }
+        }*/
     }
 
     // Update is called once per frame

@@ -17,17 +17,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "MovementPlayer2",
-                    "type": "Value",
-                    "id": "1b2c27ca-92e3-4298-99d2-66b0d1852da2",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true,
-                    "priority": 0
-                },
-                {
-                    "name": "BuildModePlayer1",
+                    "name": "BuildMode",
                     "type": "Button",
                     "id": "814e5815-1c86-4ac1-99e9-0caf992e4276",
                     "expectedControlType": "",
@@ -37,17 +27,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "BuildModePlayer2",
-                    "type": "Button",
-                    "id": "cfd4d6d1-0ed1-4d0e-a24c-96d76eeb6ba1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
-                    "name": "InteractionButtonPlayer1",
+                    "name": "InteractionButton1",
                     "type": "Button",
                     "id": "094511ef-c459-4750-8efc-216e3315f743",
                     "expectedControlType": "",
@@ -57,29 +37,9 @@
                     "priority": 0
                 },
                 {
-                    "name": "InteractionButtonPlayer2",
-                    "type": "Button",
-                    "id": "e9f3f947-a9c0-42c5-aa96-f39b534c7fe1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
-                    "name": "Interaction2ButtonPlayer1",
+                    "name": "InteractionButton2",
                     "type": "Button",
                     "id": "d6a5d643-0312-41fb-af73-0c31dfac04d1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
-                },
-                {
-                    "name": "Interaction2ButtonPlayer2",
-                    "type": "Button",
-                    "id": "062f5f45-2234-4935-bb33-96bb3f5cb951",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -115,7 +75,18 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "WASD",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Up",
+                    "id": "bc6e125e-fe71-48cc-b074-05f0a7f18e3f",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -137,7 +108,18 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "WASD",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "085e8c8d-0511-4320-a222-f89ab3a94351",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +130,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -159,7 +141,18 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "WASD",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "bdc5390e-f4d4-43be-bf15-d6e44152cc8b",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -181,7 +174,18 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "WASD",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "91e2e855-366b-42ca-8ad2-9177c24b2d2c",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -198,145 +202,35 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "075988e5-8e84-4375-99fe-418f8687f66b",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Up",
-                    "id": "9f0d943f-52b3-4bc6-a673-479432850aa9",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Up",
-                    "id": "673a6cde-e8cb-4826-8a72-e9282d7dd0f6",
-                    "path": "<Gamepad>/rightStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Down",
-                    "id": "92d70393-7814-4310-bfa8-6d409689aacc",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Down",
-                    "id": "4a0dd128-a38a-4142-b490-7ad3337e9a98",
-                    "path": "<Gamepad>/rightStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Left",
-                    "id": "1384d8da-7f8a-4d85-87a6-abee5a36917f",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Left",
-                    "id": "a147f192-3572-48ba-9d91-8ac066e4a892",
-                    "path": "<Gamepad>/rightStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Right",
-                    "id": "83eb2ea7-0dc4-48bc-8593-c73e86200a42",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Right",
-                    "id": "32f078d7-9100-4159-a9e9-9e2b7804cab4",
-                    "path": "<Gamepad>/rightStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MovementPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "165bf14a-43f0-48cf-aa34-6d9072d9a264",
                     "path": "<Keyboard>/space",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": "",
-                    "action": "BuildModePlayer1",
+                    "groups": "WASD",
+                    "action": "BuildMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ee09cef-0665-4c2d-9c3f-0a45c775eb6f",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Arrows",
+                    "action": "BuildMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "624d5587-9186-4e0d-94a0-e80446b6a504",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "BuildModePlayer1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "11d37b36-c4c0-4938-a4b9-0a00e12e0eea",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BuildModePlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d91cd4fd-f197-4aa6-8256-f5126d8592de",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": "",
-                    "action": "BuildModePlayer2",
+                    "groups": ";Gamepad",
+                    "action": "BuildMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -346,19 +240,30 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "InteractionButtonPlayer1",
+                    "groups": "WASD",
+                    "action": "InteractionButton1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c91583af-2b9d-41d1-a47d-f681ba64673a",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows",
+                    "action": "InteractionButton1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "253ca12a-29b8-43be-9ccf-f527930d1af6",
-                    "path": "<Gamepad>/dpad/right",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "InteractionButtonPlayer1",
+                    "groups": ";Gamepad",
+                    "action": "InteractionButton1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -368,63 +273,30 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Interaction2ButtonPlayer1",
+                    "groups": "WASD",
+                    "action": "InteractionButton2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "669d2a8b-782c-448d-a614-42e704a9bf0c",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows",
+                    "action": "InteractionButton2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "29d84ecf-211d-470b-8b50-1761f3824411",
-                    "path": "<Gamepad>/dpad/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction2ButtonPlayer1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9f48fcac-3818-45d6-9d86-8ccbce04f9b9",
-                    "path": "<Keyboard>/l",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction2ButtonPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6a0012a2-f6a3-4936-bc49-f9a4eb72dec5",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Interaction2ButtonPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9f83dd34-3c78-48d4-9aaf-0f083a9dbb2d",
-                    "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "InteractionButtonPlayer2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a358eeaa-4a7f-4ac1-8d80-6eafe82fcfbf",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "InteractionButtonPlayer2",
+                    "groups": ";Gamepad",
+                    "action": "InteractionButton2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -434,7 +306,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "WASD",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -445,7 +317,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -489,6 +361,28 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "WASD",
+            "bindingGroup": "WASD",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Arrows",
+            "bindingGroup": "Arrows",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
                 }

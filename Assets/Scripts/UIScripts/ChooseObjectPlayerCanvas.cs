@@ -45,11 +45,12 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         }
         ownerPicture.sprite = playerSprites[playerIndex];
         */
+        moveAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Movement"];
+        buildModeAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["BuildMode"];
+        placeObjectAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["InteractionButton1"];
+        placeObjectAction2 = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["InteractionButton2"];
         if(playerIndex==0){
-            moveAction = InputSystem.actions.FindAction("Movement");
-            buildModeAction = InputSystem.actions.FindAction("BuildModePlayer1");
-            placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer1");
-            placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer1");
+            
             background.sprite = redBackground;
             commandUpDownImage.sprite = commandUpDownRed;
             commandLeftRightImage.sprite = commandLeftRightRed;
@@ -57,10 +58,10 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             //mainPanel.position = new Vector3(0,0,0);
         }
         else{
-            moveAction = InputSystem.actions.FindAction("MovementPlayer2");
-            buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
-            placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
-            placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
+            //moveAction = InputSystem.actions.FindAction("MovementPlayer2");
+            //buildModeAction = InputSystem.actions.FindAction("BuildModePlayer2");
+            //placeObjectAction = InputSystem.actions.FindAction("InteractionButtonPlayer2");
+            //placeObjectAction2 = InputSystem.actions.FindAction("Interaction2ButtonPlayer2");
             mainPanel.SetAnchors( new Vector2(0.25f,0.5f) );
             //mainPanel.position = new Vector3(0,0,0);
             ownerPicture.sprite = catSprite;
