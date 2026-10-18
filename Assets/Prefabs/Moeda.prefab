@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69dc248455f69346978f394f8af99d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableCoin
+  onDestroyedSpawn: {fileID: 1765426893362720120, guid: 04096ab87618ae14c80b3e5a35a18c43, type: 3}
 --- !u!82 &6030247262151289740
 AudioSource:
   m_ObjectHideFlags: 0

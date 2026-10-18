@@ -3,6 +3,7 @@ using UnityEngine;
 public class CollectableCoin : MonoBehaviour
 {
     bool collected = false;
+    public GameObject onDestroyedSpawn; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,14 @@ public class CollectableCoin : MonoBehaviour
             Destroy(gameObject);
         }
     
+    }
+
+    void OnDestroy()
+    {
+        if(onDestroyedSpawn!=null){
+            GameObject aux = Instantiate(onDestroyedSpawn);
+            Destroy(aux,1.0f);
+        }
     }
 
 }
