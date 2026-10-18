@@ -7,6 +7,7 @@ using System.Collections;
 
 public class ChooseObjectPlayerCanvas : MonoBehaviour
 {
+    public static ChooseObjectPlayerCanvas[] playerObjectCanvases = {null,null,null,null};
     public int playerIndex = 0;
     public int slot1Index = 0;
     public int slot2Index = 0;
@@ -59,7 +60,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         */
         
         if(playerIndex==0){
-            
+            playerObjectCanvases[0] = this;
             background.sprite = redBackground;
             commandUpDownImage.sprite = commandUpDownRed;
             commandLeftRightImage.sprite = commandLeftRightRed;
@@ -70,6 +71,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             placeObjectAction2 = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player1/InteractionButton2"];
         }
         else{
+            playerObjectCanvases[1] = this;
             moveAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/Movement"];
             buildModeAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/BuildMode"];
             placeObjectAction = PlayerController.currentPlayerControllers[playerIndex].playerInput.actions["Player2/InteractionButton1"];
@@ -226,5 +228,12 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         PlayerController.currentPlayerControllers[playerIndex].SetObjectForSlot(slot2Index,1);
         PlayerController.currentPlayerControllers[playerIndex].LeaveSelectingObjectState();
         gameObject.SetActive(false);
+        playerObjectCanvases[playerIndex] = null;
+        if(PlayerHudPanel.playerHudPanelsList[0]==null){
+            if(playerObjectCanvases[0] == null && playerObjectCanvases[1] == null){
+                GameObject spawnedHUDCanvas = Resources.Load("HUDCanvas") as GameObject;
+                GameObject newHUD= Instantiate(spawnedHUDCanvas);
+            }
+        }
     }
 }
