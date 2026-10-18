@@ -44,10 +44,11 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     public float introDuration = 5f;
     private bool canChooseObject = false;
     public AudioSource countdownAudio;
+    public GameObject panel;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         /*
         ChoosePlayerObjectButton[] buttonsArray = objectButtonsContainer.GetComponentsInChildren<ChoosePlayerObjectButton>();
         foreach (ChoosePlayerObjectButton b in buttonsArray){
@@ -92,6 +93,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
                 slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot2Index];
         }
         else{
+                panel.SetActive(false);
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot1Index];
                 slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot2Index];
         }
