@@ -117,8 +117,15 @@ public class PlayerController : MonoBehaviour
             Die();
         }
         PauseGame();
-        if(animator!=null)
-            animator.SetBool("Moving", Mathf.Abs(playerRigidbody.linearVelocityX) != 0f);
+
+        if (animator != null)
+        {
+            bool moving = Mathf.Abs(playerRigidbody.linearVelocityX) > 0.1f;
+            bool climbing = isOnLadder;
+
+            animator.SetBool("Moving", moving && !climbing);
+            animator.SetBool("Climbing", climbing);
+        }
         if (playerRigidbody.linearVelocityX > 0f)
         {
             spriteRenderer.flipX = false;
