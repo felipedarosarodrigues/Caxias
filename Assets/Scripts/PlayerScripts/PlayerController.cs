@@ -91,11 +91,11 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (playerID == 0)
+        /*if (playerID == 0)
         {
             GameObject spawnedHUDCanvas = Resources.Load("HUDCanvas") as GameObject;
             GameObject newHUD= Instantiate(spawnedHUDCanvas);
-        }
+        }*/
         
         if(current_control_state == PlayerControlState.CHOOSING_OBJECT){
             GameObject chooseObjectCanvas = Resources.Load("ChooseObjectPlayerCanvas") as GameObject;
