@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class ChooseObjectPlayerCanvas : MonoBehaviour
 {
@@ -23,7 +24,11 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     public Image commandLeftRightImage;
     public Sprite commandLeftRightRed;
     public Sprite commandLeftRightBlue;
+    public Image confirm;
+    public Sprite confirmRed;
+    public Sprite confirmBlue;
     public Sprite[] playerSprites;
+    public GameObject backgroundImage;
     public RectTransform mainPanel;
     public RectTransform objectButtonsContainer;
     public  List<ChoosePlayerObjectButton> objectButtonsList;
@@ -34,9 +39,15 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
     InputAction buildModeAction;
     InputAction placeObjectAction;
     InputAction placeObjectAction2;
+
+    public GameObject introText;
+    public float introDuration = 5f;
+    private bool canChooseObject = false;
+    public AudioSource countdownAudio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         /*
         ChoosePlayerObjectButton[] buttonsArray = objectButtonsContainer.GetComponentsInChildren<ChoosePlayerObjectButton>();
         foreach (ChoosePlayerObjectButton b in buttonsArray){
@@ -54,8 +65,7 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             background.sprite = redBackground;
             commandUpDownImage.sprite = commandUpDownRed;
             commandLeftRightImage.sprite = commandLeftRightRed;
-            mainPanel.SetAnchors( new Vector2(0.75f,0.5f) );
-            //mainPanel.position = new Vector3(0,0,0);
+            confirm.sprite = confirmRed;
         }
         else{
             //moveAction = InputSystem.actions.FindAction("MovementPlayer2");
@@ -68,6 +78,9 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
             background.sprite = blueBackground;
             commandUpDownImage.sprite = commandUpDownBlue;
             commandLeftRightImage.sprite = commandLeftRightBlue;
+            confirm.sprite = confirmBlue;
+            backgroundImage.SetActive(true);
+
         }
         if(playerIndex==0){
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayers[slot1Index];
@@ -77,13 +90,18 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
                 slot1Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot1Index];
                 slot2Picture.sprite = GameController.singleton.PlatformSpritesForPlayer2[slot2Index];
         }
-        
 
+        mainPanel.gameObject.SetActive(false);
+        introText.SetActive(true);
+
+        StartCoroutine(ShowSelectionPanel());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!canChooseObject)
+            return;
         /*if (PlayerController.currentPlayerControllers[playerIndex]!=null)
         {
             if(PlayerController.currentPlayerControllers[playerIndex].current_control_state != PlayerController.PlayerControlState.CHOOSING_OBJECT)
@@ -118,6 +136,25 @@ public class ChooseObjectPlayerCanvas : MonoBehaviour
         timeSinceLastChange+= Time.deltaTime;
         lastYValue = moveValue.y;
         lastXValue = moveValue.x;
+    }
+
+    IEnumerator ShowSelectionPanel()
+    {
+        // Mostra o texto inicial
+        introText.SetActive(true);
+        mainPanel.gameObject.SetActive(false);
+
+        // Toca o áudio da contagem
+        countdownAudio.Play();
+
+        // Aguarda os 5 segundos
+        yield return new WaitForSeconds(introDuration);
+
+        // Esconde o texto e libera a seleção
+        introText.SetActive(false);
+        mainPanel.gameObject.SetActive(true);
+
+        canChooseObject = true;
     }
 
     void changeObjectForSlot(int slot,int changeAmount)

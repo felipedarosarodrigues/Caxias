@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 1960516498995306541}
   - component: {fileID: 619105095868385397}
   - component: {fileID: 5180070066981681054}
+  - component: {fileID: 970529469903164356}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -351,6 +352,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &970529469903164356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512479156245890327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d3b6ec0a28dc4583670ec1fc5763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::textHover1
+  preto: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  branco: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3092610946714043092
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +377,7 @@ GameObject:
   - component: {fileID: 5306617301331160275}
   - component: {fileID: 1665082880740972187}
   - component: {fileID: 3661047312103025180}
+  - component: {fileID: 3386537889530194564}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -488,6 +504,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3386537889530194564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092610946714043092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d3b6ec0a28dc4583670ec1fc5763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::textHover1
+  preto: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  branco: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4044395950008931136
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +614,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -594,10 +624,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7694822695631186222, guid: cdf673d0d1ac15d44acfee291698ed5c, type: 3}
+    m_PressedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_SelectedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_DisabledSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -854,6 +884,7 @@ GameObject:
   - component: {fileID: 7577649217771813017}
   - component: {fileID: 5512494466003130873}
   - component: {fileID: 602194356901877745}
+  - component: {fileID: 6842956704311822004}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -980,6 +1011,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6842956704311822004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808441827128967283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d3b6ec0a28dc4583670ec1fc5763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::textHover1
+  preto: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  branco: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6060950146347222173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +1121,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1086,10 +1131,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7694822695631186222, guid: cdf673d0d1ac15d44acfee291698ed5c, type: 3}
+    m_PressedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_SelectedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_DisabledSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1131,7 +1176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3956006754533929259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1147,9 +1192,9 @@ RectTransform:
   - {fileID: 5306617301331160275}
   m_Father: {fileID: 8658080039333837071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 119.61, y: -89.3465}
   m_SizeDelta: {x: 200, y: 40.528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2975735784590696088
@@ -1209,7 +1254,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1219,10 +1264,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7694822695631186222, guid: cdf673d0d1ac15d44acfee291698ed5c, type: 3}
+    m_PressedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_SelectedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_DisabledSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1330,7 +1375,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1340,10 +1385,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 7694822695631186222, guid: cdf673d0d1ac15d44acfee291698ed5c, type: 3}
+    m_PressedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_SelectedSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
+    m_DisabledSprite: {fileID: -4111054602213665508, guid: 6dff9bdb49ae4a24299da1e3d940dcfc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1378,6 +1423,7 @@ GameObject:
   - component: {fileID: 4708751336266999355}
   - component: {fileID: 5050559237119285774}
   - component: {fileID: 8830545259923403188}
+  - component: {fileID: 2376443795344281755}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1504,3 +1550,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2376443795344281755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928966994393855647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08d3b6ec0a28dc4583670ec1fc5763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::textHover1
+  preto: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  branco: {r: 1, g: 1, b: 1, a: 1}
