@@ -75,7 +75,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -97,7 +97,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -119,7 +119,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -141,7 +141,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -163,7 +163,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "BuildMode",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -185,7 +185,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "InteractionButton1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -207,7 +207,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "InteractionButton2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -229,7 +229,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -320,7 +320,18 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Up",
+                    "id": "51cdad1b-e4a9-4c82-97d2-c0be9dc50844",
+                    "path": "<Keyboard>/numpad5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -342,7 +353,18 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "280b5001-14cb-48f4-88cc-39e0f4932884",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -364,7 +386,18 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "3b656910-a777-44a3-b0b7-cfbd951176bc",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -386,7 +419,18 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "49e97fb7-297a-4793-b772-d21fa36f73ba",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrows;Keyboard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -408,7 +452,7 @@
                     "path": "<Keyboard>/enter",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
                     "action": "BuildMode",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -427,10 +471,10 @@
                 {
                     "name": "",
                     "id": "2121aa76-34ef-405d-8eb7-0d7c557eecd6",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
                     "action": "InteractionButton1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -449,10 +493,10 @@
                 {
                     "name": "",
                     "id": "98e523bf-8be7-4f78-bea6-be0cda2749ed",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Arrows",
+                    "groups": "Arrows;Keyboard",
                     "action": "InteractionButton2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -474,7 +518,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
+                    "groups": "Keyboard",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -535,19 +579,8 @@
             ]
         },
         {
-            "name": "WASD",
-            "bindingGroup": "WASD",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Arrows",
-            "bindingGroup": "Arrows",
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
