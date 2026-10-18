@@ -873,6 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7231ffb41e33041488de0cb694049c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCanvas
+  initialFocusObject: {fileID: 4044395950008931136}
 --- !u!1 &5808441827128967283
 GameObject:
   m_ObjectHideFlags: 0

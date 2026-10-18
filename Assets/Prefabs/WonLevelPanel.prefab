@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078caec6dc31f9f488106334dbe35334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WonLevelPanel
+  initialFocusObject: {fileID: 2292472427829989432}
 --- !u!1 &6050108294872233991
 GameObject:
   m_ObjectHideFlags: 0

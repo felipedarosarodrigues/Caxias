@@ -5,6 +5,7 @@ public class WonLevelPanel : MonoBehaviour
 {
     bool isLoadingScene = false;
     public static WonLevelPanel singleton;
+    public GameObject initialFocusObject;
     Scene scene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +18,8 @@ public class WonLevelPanel : MonoBehaviour
         {
             singleton = this;
             scene = SceneManager.GetActiveScene();
+            if(initialFocusObject!=null)
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(initialFocusObject);
         }
     }
 

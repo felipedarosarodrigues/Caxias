@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseCanvas : MonoBehaviour
 {
     public static PauseCanvas singleton;
+    public GameObject initialFocusObject;
     
     bool isLoadingScene = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,6 +14,8 @@ public class PauseCanvas : MonoBehaviour
         {
             singleton = this;
             Time.timeScale = 0f;
+            if(initialFocusObject!=null)
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(initialFocusObject);
         }
         else
         {
